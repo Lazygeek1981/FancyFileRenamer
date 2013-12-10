@@ -1,0 +1,28 @@
+﻿
+
+folgende "Features" sollte es geben:
+
+1. Reihenfolge 'ändern'
+  - zuerst den Task hinzufügen
+  - dann den Task markieren
+  - dann wird das EditControl angezeigt.
+  - hier kann man dann "Live Updates" machen.
+
+2. ListBoxen auf "virtuellen Modes" stellen und nur die Elemente in der aktuellen Ansicht "ändern".
+
+ListBoxen durch ListViews ersetzen!!!!
+
+Weitere Ideen für TASK
+
+- Clear Filename Task
+
+Ideen für OrderBy Aktionen
+
+- OrderBy Size
+
+- OrderBy Date
+
+- OrderBy EXIF Date!!!
+
+
+Bunch of File CHECK FOR INVALID Filenames!
