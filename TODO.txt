@@ -1,0 +1,7 @@
+
+
+Eigene kleine Form für die Bearbeitung der Task
+	-> dann bei OK übernahme der Task Details in die Liste!
+	-> Buttons um Reihenfolge zu ändern, Task zu editieren und zu löschen
+
+Das gleich für Sortierung!
