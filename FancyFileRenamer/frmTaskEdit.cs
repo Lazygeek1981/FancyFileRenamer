@@ -19,12 +19,13 @@ namespace FancyFileRenamer
       InitializeComponent();
     }
 
-    public void SetTaskEditControl(ITaskEditControl control)
+    public void SetTaskEditControlAndTask(ITaskEditControl control, ITask task)
     {
       this.taskEditControl = control;
-
       splitContainer1.Panel1.Controls.Clear();
       splitContainer1.Panel1.Controls.Add(taskEditControl as Control);
+
+      taskEditControl.SetTaskToControl(task);
     }
 
     private void btnOk_Click(object sender, EventArgs e)
@@ -39,5 +40,6 @@ namespace FancyFileRenamer
       DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.Hide();
     }
+
   }
 }

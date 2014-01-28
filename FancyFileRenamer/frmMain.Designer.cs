@@ -33,7 +33,6 @@
       this.tabControl = new System.Windows.Forms.TabControl();
       this.tabPageTasks = new System.Windows.Forms.TabPage();
       this.btnRemoveTask = new System.Windows.Forms.Button();
-      this.panel1 = new System.Windows.Forms.Panel();
       this.btnAddTask = new System.Windows.Forms.Button();
       this.comboTasks = new System.Windows.Forms.ComboBox();
       this.listBoxTasksToApply = new System.Windows.Forms.ListBox();
@@ -45,6 +44,8 @@
       this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.btnGo = new System.Windows.Forms.Button();
       this.folderChooseBox = new LazyLib.Windows.Forms.Controls.FolderChooseBox();
+      this.btnMoveUp = new System.Windows.Forms.Button();
+      this.btnMoveDown = new System.Windows.Forms.Button();
       this.tabControl.SuspendLayout();
       this.tabPageTasks.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -81,8 +82,9 @@
       // 
       // tabPageTasks
       // 
+      this.tabPageTasks.Controls.Add(this.btnMoveDown);
+      this.tabPageTasks.Controls.Add(this.btnMoveUp);
       this.tabPageTasks.Controls.Add(this.btnRemoveTask);
-      this.tabPageTasks.Controls.Add(this.panel1);
       this.tabPageTasks.Controls.Add(this.btnAddTask);
       this.tabPageTasks.Controls.Add(this.comboTasks);
       this.tabPageTasks.Controls.Add(this.listBoxTasksToApply);
@@ -96,28 +98,23 @@
       // 
       // btnRemoveTask
       // 
-      this.btnRemoveTask.Location = new System.Drawing.Point(260, 12);
+      this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnRemoveTask.Location = new System.Drawing.Point(383, 70);
       this.btnRemoveTask.Name = "btnRemoveTask";
-      this.btnRemoveTask.Size = new System.Drawing.Size(75, 23);
+      this.btnRemoveTask.Size = new System.Drawing.Size(33, 23);
       this.btnRemoveTask.TabIndex = 4;
-      this.btnRemoveTask.Text = "Remove";
+      this.btnRemoveTask.Text = "-";
       this.btnRemoveTask.UseVisualStyleBackColor = true;
       this.btnRemoveTask.Click += new System.EventHandler(this.btnRemove_Click);
       // 
-      // panel1
-      // 
-      this.panel1.Location = new System.Drawing.Point(6, 344);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(410, 275);
-      this.panel1.TabIndex = 3;
-      // 
       // btnAddTask
       // 
-      this.btnAddTask.Location = new System.Drawing.Point(341, 12);
+      this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddTask.Location = new System.Drawing.Point(383, 12);
       this.btnAddTask.Name = "btnAddTask";
-      this.btnAddTask.Size = new System.Drawing.Size(75, 23);
+      this.btnAddTask.Size = new System.Drawing.Size(33, 23);
       this.btnAddTask.TabIndex = 2;
-      this.btnAddTask.Text = "Add";
+      this.btnAddTask.Text = "+";
       this.btnAddTask.UseVisualStyleBackColor = true;
       this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
       // 
@@ -126,7 +123,7 @@
       this.comboTasks.FormattingEnabled = true;
       this.comboTasks.Location = new System.Drawing.Point(6, 14);
       this.comboTasks.Name = "comboTasks";
-      this.comboTasks.Size = new System.Drawing.Size(248, 21);
+      this.comboTasks.Size = new System.Drawing.Size(371, 21);
       this.comboTasks.TabIndex = 1;
       this.comboTasks.SelectedIndexChanged += new System.EventHandler(this.comboTasks_SelectedIndexChanged);
       // 
@@ -135,16 +132,17 @@
       this.listBoxTasksToApply.FormattingEnabled = true;
       this.listBoxTasksToApply.Location = new System.Drawing.Point(6, 41);
       this.listBoxTasksToApply.Name = "listBoxTasksToApply";
-      this.listBoxTasksToApply.Size = new System.Drawing.Size(410, 290);
+      this.listBoxTasksToApply.Size = new System.Drawing.Size(371, 290);
       this.listBoxTasksToApply.TabIndex = 0;
       this.listBoxTasksToApply.SelectedIndexChanged += new System.EventHandler(this.listBoxTasksToApply_SelectedIndexChanged);
+      this.listBoxTasksToApply.DoubleClick += new System.EventHandler(this.listBoxTasksToApply_DoubleClick);
       // 
       // tabPageOrdering
       // 
       this.tabPageOrdering.Location = new System.Drawing.Point(4, 22);
       this.tabPageOrdering.Name = "tabPageOrdering";
       this.tabPageOrdering.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageOrdering.Size = new System.Drawing.Size(420, 621);
+      this.tabPageOrdering.Size = new System.Drawing.Size(422, 625);
       this.tabPageOrdering.TabIndex = 2;
       this.tabPageOrdering.Text = "FileOrdering";
       this.tabPageOrdering.UseVisualStyleBackColor = true;
@@ -235,6 +233,26 @@
       this.folderChooseBox.TabIndex = 11;
       this.folderChooseBox.Text = "Double click or enter path here to choose a folder";
       // 
+      // btnMoveUp
+      // 
+      this.btnMoveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnMoveUp.Location = new System.Drawing.Point(383, 41);
+      this.btnMoveUp.Name = "btnMoveUp";
+      this.btnMoveUp.Size = new System.Drawing.Size(33, 23);
+      this.btnMoveUp.TabIndex = 5;
+      this.btnMoveUp.Text = "/\\";
+      this.btnMoveUp.UseVisualStyleBackColor = true;
+      // 
+      // btnMoveDown
+      // 
+      this.btnMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnMoveDown.Location = new System.Drawing.Point(383, 99);
+      this.btnMoveDown.Name = "btnMoveDown";
+      this.btnMoveDown.Size = new System.Drawing.Size(33, 23);
+      this.btnMoveDown.TabIndex = 6;
+      this.btnMoveDown.Text = "\\/";
+      this.btnMoveDown.UseVisualStyleBackColor = true;
+      // 
       // frmMain
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,11 +294,12 @@
     private System.Windows.Forms.SplitContainer splitContainer2;
     private System.Windows.Forms.ListBox listBoxTasksToApply;
     private System.Windows.Forms.Button btnRemoveTask;
-    private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Button btnAddTask;
     private System.Windows.Forms.ComboBox comboTasks;
     private System.Windows.Forms.Button btnGo;
     private LazyLib.Windows.Forms.Controls.FolderChooseBox folderChooseBox;
+    private System.Windows.Forms.Button btnMoveDown;
+    private System.Windows.Forms.Button btnMoveUp;
   }
 }
 

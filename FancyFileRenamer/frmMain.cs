@@ -164,8 +164,7 @@ namespace FancyFileRenamer
     {
       if (isValidTaskSelected())
       {
-        listBoxTasksToApply.Items.Remove(listBoxTasksToApply.SelectedItem);
-        panel1.Controls.Clear();
+        listBoxTasksToApply.Items.Remove(listBoxTasksToApply.SelectedItem);        
         processTasks();
       }
     }
@@ -187,23 +186,52 @@ namespace FancyFileRenamer
 
     private void listBoxTasksToApply_SelectedIndexChanged(object sender, EventArgs e)
     {
-      listBoxPreview.SelectedItem = listBoxPreview.SelectedItem;
+      //listBoxPreview.SelectedItem = listBoxPreview.SelectedItem;
 
-      if (isValidTaskSelected())
-      {
-        panel1.Controls.Clear();
+      //if (isValidTaskSelected())
+      //{
+      //  panel1.Controls.Clear();
 
-        TaskListEntry entry = (listBoxTasksToApply.SelectedItem as TaskListEntry);
+      //  TaskListEntry entry = (listBoxTasksToApply.SelectedItem as TaskListEntry);
 
-        panel1.Controls.Add((UserControl)entry.EditControl);
+      //  panel1.Controls.Add((UserControl)entry.EditControl);
 
-        entry.EditControl.SetTaskToControl(entry.Task);
-      }
+      //  entry.EditControl.SetTaskToControl(entry.Task);
+      //}
     }
 
     void frmMain_TaskChanged(ITaskEditControl sender, ITask changedTask)
     {
       processTasks();
+    }
+
+    private void editTask(TaskListEntry entry)
+    {
+      frmTaskEdit taskEditForm = new frmTaskEdit();
+      taskEditForm.StartPosition = FormStartPosition.CenterScreen;
+      taskEditForm.SetTaskEditControlAndTask(entry.EditControl, entry.Task);
+      taskEditForm.Text = "Edit " + entry.Description;
+
+      if (taskEditForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+      {
+        updateTaskInListView(entry);
+
+        processTasks();
+      }
+    }
+
+    private void updateTaskInListView(TaskListEntry entry)
+    {
+      listBoxTasksToApply.Items[listBoxTasksToApply.SelectedIndex] = listBoxTasksToApply.Items[listBoxTasksToApply.SelectedIndex];
+    }
+
+    private void listBoxTasksToApply_DoubleClick(object sender, EventArgs e)
+    {
+      if (isValidTaskSelected())
+      {
+        TaskListEntry entry = (listBoxTasksToApply.SelectedItem as TaskListEntry);
+        editTask(entry);
+      }
     }
   }
 }
