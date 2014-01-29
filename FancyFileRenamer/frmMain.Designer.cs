@@ -30,13 +30,12 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
       this.listBxSource = new System.Windows.Forms.ListBox();
-      this.tabControl = new System.Windows.Forms.TabControl();
-      this.tabPageTasks = new System.Windows.Forms.TabPage();
+      this.btnMoveDown = new System.Windows.Forms.Button();
+      this.btnMoveUp = new System.Windows.Forms.Button();
       this.btnRemoveTask = new System.Windows.Forms.Button();
       this.btnAddTask = new System.Windows.Forms.Button();
       this.comboTasks = new System.Windows.Forms.ComboBox();
       this.listBoxTasksToApply = new System.Windows.Forms.ListBox();
-      this.tabPageOrdering = new System.Windows.Forms.TabPage();
       this.listBoxPreview = new System.Windows.Forms.ListBox();
       this.btnLoad = new System.Windows.Forms.Button();
       this.txtPattern = new System.Windows.Forms.TextBox();
@@ -44,10 +43,15 @@
       this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.btnGo = new System.Windows.Forms.Button();
       this.folderChooseBox = new LazyLib.Windows.Forms.Controls.FolderChooseBox();
-      this.btnMoveUp = new System.Windows.Forms.Button();
-      this.btnMoveDown = new System.Windows.Forms.Button();
-      this.tabControl.SuspendLayout();
-      this.tabPageTasks.SuspendLayout();
+      this.groupTasks = new System.Windows.Forms.GroupBox();
+      this.groupOrdering = new System.Windows.Forms.GroupBox();
+      this.radioName = new System.Windows.Forms.RadioButton();
+      this.comboOrder = new System.Windows.Forms.ComboBox();
+      this.radioSize = new System.Windows.Forms.RadioButton();
+      this.radioCreationDate = new System.Windows.Forms.RadioButton();
+      this.radioChangeDate = new System.Windows.Forms.RadioButton();
+      this.radioButton1 = new System.Windows.Forms.RadioButton();
+      this.labelOrder = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +60,8 @@
       this.splitContainer2.Panel1.SuspendLayout();
       this.splitContainer2.Panel2.SuspendLayout();
       this.splitContainer2.SuspendLayout();
+      this.groupTasks.SuspendLayout();
+      this.groupOrdering.SuspendLayout();
       this.SuspendLayout();
       // 
       // listBxSource
@@ -69,37 +75,30 @@
       this.listBxSource.TabIndex = 3;
       this.listBxSource.SelectedIndexChanged += new System.EventHandler(this.listBxSource_SelectedIndexChanged);
       // 
-      // tabControl
+      // btnMoveDown
       // 
-      this.tabControl.Controls.Add(this.tabPageTasks);
-      this.tabControl.Controls.Add(this.tabPageOrdering);
-      this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabControl.Location = new System.Drawing.Point(0, 0);
-      this.tabControl.Name = "tabControl";
-      this.tabControl.SelectedIndex = 0;
-      this.tabControl.Size = new System.Drawing.Size(430, 651);
-      this.tabControl.TabIndex = 4;
+      this.btnMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnMoveDown.Location = new System.Drawing.Point(383, 104);
+      this.btnMoveDown.Name = "btnMoveDown";
+      this.btnMoveDown.Size = new System.Drawing.Size(33, 23);
+      this.btnMoveDown.TabIndex = 6;
+      this.btnMoveDown.Text = "\\/";
+      this.btnMoveDown.UseVisualStyleBackColor = true;
       // 
-      // tabPageTasks
+      // btnMoveUp
       // 
-      this.tabPageTasks.Controls.Add(this.btnMoveDown);
-      this.tabPageTasks.Controls.Add(this.btnMoveUp);
-      this.tabPageTasks.Controls.Add(this.btnRemoveTask);
-      this.tabPageTasks.Controls.Add(this.btnAddTask);
-      this.tabPageTasks.Controls.Add(this.comboTasks);
-      this.tabPageTasks.Controls.Add(this.listBoxTasksToApply);
-      this.tabPageTasks.Location = new System.Drawing.Point(4, 22);
-      this.tabPageTasks.Name = "tabPageTasks";
-      this.tabPageTasks.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageTasks.Size = new System.Drawing.Size(422, 625);
-      this.tabPageTasks.TabIndex = 1;
-      this.tabPageTasks.Text = "Renaming Tasks";
-      this.tabPageTasks.UseVisualStyleBackColor = true;
+      this.btnMoveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnMoveUp.Location = new System.Drawing.Point(383, 46);
+      this.btnMoveUp.Name = "btnMoveUp";
+      this.btnMoveUp.Size = new System.Drawing.Size(33, 23);
+      this.btnMoveUp.TabIndex = 5;
+      this.btnMoveUp.Text = "/\\";
+      this.btnMoveUp.UseVisualStyleBackColor = true;
       // 
       // btnRemoveTask
       // 
       this.btnRemoveTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnRemoveTask.Location = new System.Drawing.Point(383, 70);
+      this.btnRemoveTask.Location = new System.Drawing.Point(383, 75);
       this.btnRemoveTask.Name = "btnRemoveTask";
       this.btnRemoveTask.Size = new System.Drawing.Size(33, 23);
       this.btnRemoveTask.TabIndex = 4;
@@ -110,7 +109,7 @@
       // btnAddTask
       // 
       this.btnAddTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddTask.Location = new System.Drawing.Point(383, 12);
+      this.btnAddTask.Location = new System.Drawing.Point(383, 17);
       this.btnAddTask.Name = "btnAddTask";
       this.btnAddTask.Size = new System.Drawing.Size(33, 23);
       this.btnAddTask.TabIndex = 2;
@@ -121,7 +120,7 @@
       // comboTasks
       // 
       this.comboTasks.FormattingEnabled = true;
-      this.comboTasks.Location = new System.Drawing.Point(6, 14);
+      this.comboTasks.Location = new System.Drawing.Point(6, 19);
       this.comboTasks.Name = "comboTasks";
       this.comboTasks.Size = new System.Drawing.Size(371, 21);
       this.comboTasks.TabIndex = 1;
@@ -130,22 +129,12 @@
       // listBoxTasksToApply
       // 
       this.listBoxTasksToApply.FormattingEnabled = true;
-      this.listBoxTasksToApply.Location = new System.Drawing.Point(6, 41);
+      this.listBoxTasksToApply.Location = new System.Drawing.Point(6, 46);
       this.listBoxTasksToApply.Name = "listBoxTasksToApply";
-      this.listBoxTasksToApply.Size = new System.Drawing.Size(371, 290);
+      this.listBoxTasksToApply.Size = new System.Drawing.Size(371, 186);
       this.listBoxTasksToApply.TabIndex = 0;
       this.listBoxTasksToApply.SelectedIndexChanged += new System.EventHandler(this.listBoxTasksToApply_SelectedIndexChanged);
       this.listBoxTasksToApply.DoubleClick += new System.EventHandler(this.listBoxTasksToApply_DoubleClick);
-      // 
-      // tabPageOrdering
-      // 
-      this.tabPageOrdering.Location = new System.Drawing.Point(4, 22);
-      this.tabPageOrdering.Name = "tabPageOrdering";
-      this.tabPageOrdering.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPageOrdering.Size = new System.Drawing.Size(422, 625);
-      this.tabPageOrdering.TabIndex = 2;
-      this.tabPageOrdering.Text = "FileOrdering";
-      this.tabPageOrdering.UseVisualStyleBackColor = true;
       // 
       // listBoxPreview
       // 
@@ -202,7 +191,8 @@
       // 
       // splitContainer2.Panel1
       // 
-      this.splitContainer2.Panel1.Controls.Add(this.tabControl);
+      this.splitContainer2.Panel1.Controls.Add(this.groupOrdering);
+      this.splitContainer2.Panel1.Controls.Add(this.groupTasks);
       // 
       // splitContainer2.Panel2
       // 
@@ -233,25 +223,112 @@
       this.folderChooseBox.TabIndex = 11;
       this.folderChooseBox.Text = "Double click or enter path here to choose a folder";
       // 
-      // btnMoveUp
+      // groupTasks
       // 
-      this.btnMoveUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnMoveUp.Location = new System.Drawing.Point(383, 41);
-      this.btnMoveUp.Name = "btnMoveUp";
-      this.btnMoveUp.Size = new System.Drawing.Size(33, 23);
-      this.btnMoveUp.TabIndex = 5;
-      this.btnMoveUp.Text = "/\\";
-      this.btnMoveUp.UseVisualStyleBackColor = true;
+      this.groupTasks.Controls.Add(this.btnMoveDown);
+      this.groupTasks.Controls.Add(this.comboTasks);
+      this.groupTasks.Controls.Add(this.btnMoveUp);
+      this.groupTasks.Controls.Add(this.listBoxTasksToApply);
+      this.groupTasks.Controls.Add(this.btnRemoveTask);
+      this.groupTasks.Controls.Add(this.btnAddTask);
+      this.groupTasks.Location = new System.Drawing.Point(3, 13);
+      this.groupTasks.Name = "groupTasks";
+      this.groupTasks.Size = new System.Drawing.Size(417, 241);
+      this.groupTasks.TabIndex = 5;
+      this.groupTasks.TabStop = false;
+      this.groupTasks.Text = "Renaming Tasks";
       // 
-      // btnMoveDown
+      // groupOrdering
       // 
-      this.btnMoveDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnMoveDown.Location = new System.Drawing.Point(383, 99);
-      this.btnMoveDown.Name = "btnMoveDown";
-      this.btnMoveDown.Size = new System.Drawing.Size(33, 23);
-      this.btnMoveDown.TabIndex = 6;
-      this.btnMoveDown.Text = "\\/";
-      this.btnMoveDown.UseVisualStyleBackColor = true;
+      this.groupOrdering.Controls.Add(this.labelOrder);
+      this.groupOrdering.Controls.Add(this.radioButton1);
+      this.groupOrdering.Controls.Add(this.radioChangeDate);
+      this.groupOrdering.Controls.Add(this.radioCreationDate);
+      this.groupOrdering.Controls.Add(this.radioSize);
+      this.groupOrdering.Controls.Add(this.comboOrder);
+      this.groupOrdering.Controls.Add(this.radioName);
+      this.groupOrdering.Location = new System.Drawing.Point(3, 260);
+      this.groupOrdering.Name = "groupOrdering";
+      this.groupOrdering.Size = new System.Drawing.Size(416, 242);
+      this.groupOrdering.TabIndex = 6;
+      this.groupOrdering.TabStop = false;
+      this.groupOrdering.Text = "Input File Ordering";
+      // 
+      // radioName
+      // 
+      this.radioName.AutoSize = true;
+      this.radioName.Location = new System.Drawing.Point(22, 30);
+      this.radioName.Name = "radioName";
+      this.radioName.Size = new System.Drawing.Size(53, 17);
+      this.radioName.TabIndex = 0;
+      this.radioName.TabStop = true;
+      this.radioName.Text = "Name";
+      this.radioName.UseVisualStyleBackColor = true;
+      // 
+      // comboOrder
+      // 
+      this.comboOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboOrder.FormattingEnabled = true;
+      this.comboOrder.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+      this.comboOrder.Location = new System.Drawing.Point(22, 192);
+      this.comboOrder.Name = "comboOrder";
+      this.comboOrder.Size = new System.Drawing.Size(121, 21);
+      this.comboOrder.TabIndex = 1;
+      // 
+      // radioSize
+      // 
+      this.radioSize.AutoSize = true;
+      this.radioSize.Location = new System.Drawing.Point(22, 53);
+      this.radioSize.Name = "radioSize";
+      this.radioSize.Size = new System.Drawing.Size(45, 17);
+      this.radioSize.TabIndex = 2;
+      this.radioSize.TabStop = true;
+      this.radioSize.Text = "Size";
+      this.radioSize.UseVisualStyleBackColor = true;
+      // 
+      // radioCreationDate
+      // 
+      this.radioCreationDate.AutoSize = true;
+      this.radioCreationDate.Location = new System.Drawing.Point(22, 76);
+      this.radioCreationDate.Name = "radioCreationDate";
+      this.radioCreationDate.Size = new System.Drawing.Size(88, 17);
+      this.radioCreationDate.TabIndex = 3;
+      this.radioCreationDate.TabStop = true;
+      this.radioCreationDate.Text = "Creation date";
+      this.radioCreationDate.UseVisualStyleBackColor = true;
+      // 
+      // radioChangeDate
+      // 
+      this.radioChangeDate.AutoSize = true;
+      this.radioChangeDate.Location = new System.Drawing.Point(22, 99);
+      this.radioChangeDate.Name = "radioChangeDate";
+      this.radioChangeDate.Size = new System.Drawing.Size(86, 17);
+      this.radioChangeDate.TabIndex = 4;
+      this.radioChangeDate.TabStop = true;
+      this.radioChangeDate.Text = "Change date";
+      this.radioChangeDate.UseVisualStyleBackColor = true;
+      // 
+      // radioButton1
+      // 
+      this.radioButton1.AutoSize = true;
+      this.radioButton1.Location = new System.Drawing.Point(22, 122);
+      this.radioButton1.Name = "radioButton1";
+      this.radioButton1.Size = new System.Drawing.Size(143, 17);
+      this.radioButton1.TabIndex = 5;
+      this.radioButton1.TabStop = true;
+      this.radioButton1.Text = "EXIF Date (Pictures only)";
+      this.radioButton1.UseVisualStyleBackColor = true;
+      // 
+      // labelOrder
+      // 
+      this.labelOrder.AutoSize = true;
+      this.labelOrder.Location = new System.Drawing.Point(19, 176);
+      this.labelOrder.Name = "labelOrder";
+      this.labelOrder.Size = new System.Drawing.Size(33, 13);
+      this.labelOrder.TabIndex = 6;
+      this.labelOrder.Text = "Order";
       // 
       // frmMain
       // 
@@ -265,9 +342,7 @@
       this.Controls.Add(this.btnLoad);
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "frmMain";
-      this.Text = "Fancy File Renamer";
-      this.tabControl.ResumeLayout(false);
-      this.tabPageTasks.ResumeLayout(false);
+      this.Text = " ";
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -276,6 +351,9 @@
       this.splitContainer2.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
+      this.groupTasks.ResumeLayout(false);
+      this.groupOrdering.ResumeLayout(false);
+      this.groupOrdering.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -284,12 +362,9 @@
     #endregion
 
     private System.Windows.Forms.ListBox listBxSource;
-    private System.Windows.Forms.TabControl tabControl;
-    private System.Windows.Forms.TabPage tabPageTasks;
     private System.Windows.Forms.ListBox listBoxPreview;
     private System.Windows.Forms.Button btnLoad;
     private System.Windows.Forms.TextBox txtPattern;
-    private System.Windows.Forms.TabPage tabPageOrdering;
     private System.Windows.Forms.SplitContainer splitContainer1;
     private System.Windows.Forms.SplitContainer splitContainer2;
     private System.Windows.Forms.ListBox listBoxTasksToApply;
@@ -300,6 +375,15 @@
     private LazyLib.Windows.Forms.Controls.FolderChooseBox folderChooseBox;
     private System.Windows.Forms.Button btnMoveDown;
     private System.Windows.Forms.Button btnMoveUp;
+    private System.Windows.Forms.GroupBox groupOrdering;
+    private System.Windows.Forms.Label labelOrder;
+    private System.Windows.Forms.RadioButton radioButton1;
+    private System.Windows.Forms.RadioButton radioChangeDate;
+    private System.Windows.Forms.RadioButton radioCreationDate;
+    private System.Windows.Forms.RadioButton radioSize;
+    private System.Windows.Forms.ComboBox comboOrder;
+    private System.Windows.Forms.RadioButton radioName;
+    private System.Windows.Forms.GroupBox groupTasks;
   }
 }
 
