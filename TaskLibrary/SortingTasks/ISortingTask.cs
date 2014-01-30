@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  public interface IOrderingTask
+  public interface ISortingTask : IComparer<File>
   {
-    Order Ordering { get; set; }
-
-    int Compare(File fileA, File fileB);
+    SortingOrder Ordering { get; set; }
   }
 }

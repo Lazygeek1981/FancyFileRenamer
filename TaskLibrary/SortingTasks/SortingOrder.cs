@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  public enum Order { Ascending = 1, Descending = -1 }
+  public enum SortingOrder { Ascending = 1, Descending = -1 }
 }
