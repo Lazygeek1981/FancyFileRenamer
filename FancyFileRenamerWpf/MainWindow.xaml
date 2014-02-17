@@ -18,8 +18,46 @@
       <Button Name="btnLoadPath" Width="Auto" Margin="5" >Load Path</Button>
     </StackPanel>
     <ListView Name="listSource" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="5" />
-    <GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Task" Padding="5" Margin="5"></GroupBox>
-    <GroupBox Grid.Row="2" Grid.Column="1" MinHeight="300" Header="Sorting Task" Padding="5" Margin="5"></GroupBox>
+    <GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Task" Padding="5" Margin="5">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="32"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="5"></ListBox>
+        <Button Grid.Column="1" Grid.Row="0" Name="buttonRenamingTaskUp">/\</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="buttonRenamingTaskAdd">+</Button>
+        <Button Grid.Column="1" Grid.Row="2" Name="buttonRenamingTaskRemove">-</Button>
+        <Button Grid.Column="1" Grid.Row="3" Name="buttonRenamingTaskDown">\/</Button>
+      </Grid>
+    </GroupBox>
+    <GroupBox Grid.Row="2" Grid.Column="1" MinHeight="300" Header="Sorting Task" Padding="5" Margin="5">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"></ColumnDefinition>
+          <ColumnDefinition Width="32"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="32"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="5"></ListBox>
+        <Button Grid.Column="1" Grid.Row="0" Name="buttonSortingTaskUp">/\</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="buttonSortingTaskAdd">+</Button>
+        <Button Grid.Column="1" Grid.Row="2" Name="buttonSortingTaskRemove">-</Button>
+        <Button Grid.Column="1" Grid.Row="3" Name="buttonSortingTaskDown">\/</Button>
+      </Grid>
+    </GroupBox>
     <ListView Name="listResult" Grid.RowSpan="2" Grid.Column="2" Grid.Row="1" Margin="5" ScrollViewer.VerticalScrollBarVisibility="Visible" />
   </Grid>
 </Window>
