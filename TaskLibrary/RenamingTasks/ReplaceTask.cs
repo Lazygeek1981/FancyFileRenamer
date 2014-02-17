@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FancyFileRenamer.RenamingTasks.TaskLibrary
+namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
   public class ReplaceTask : IRenamingTask
   {

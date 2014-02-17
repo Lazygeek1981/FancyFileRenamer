@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FancyFileRenamer.RenamingTasks.TaskLibrary
+namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
   public interface IRenamingTask
   {
@@ -16,9 +16,7 @@ namespace FancyFileRenamer.RenamingTasks.TaskLibrary
 
     string Description { get; }
 
-    string ListName { get; }
-
-    Bitmap ListIcon { get; }
+    string NameInTaskSelectionList { get; }
 
     IRenamingTask GetNewInstance();
 
