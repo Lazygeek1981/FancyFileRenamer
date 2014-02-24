@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Converters\ComboBoxItemToBoolConverter.cs" />
     <Compile Include="Converters\ListBoxItemToBoolConverter.cs" />
+    <Compile Include="Converters\TaskToTaskIconConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -100,6 +101,15 @@
       <Project>{069ae3e3-0e28-4ef0-af40-187eef2db1d3}</Project>
       <Name>TaskLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\task_enumerate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\task_rename.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

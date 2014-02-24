@@ -57,5 +57,15 @@ namespace FancyFileRenamerWpf
       CurrentTasks.Add((comboTasks.SelectedItem as IRenamingTask).GetNewInstance());
       comboTasks.SelectedIndex = 0;
     }
+
+    private void btnStartRenaming_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void buttonLoadPath_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
   }
 }
