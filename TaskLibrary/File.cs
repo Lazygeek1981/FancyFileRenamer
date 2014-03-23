@@ -16,7 +16,8 @@ namespace FancyFileRenamer.TaskLibrary
       fileinfo = new FileInfo(filepath);
       Filepath = filepath;
       Filename = Path.GetFileName(filepath);
-      newFilename = Filename;
+      NewFilename = Filename;
+      IsValid = true;
     }
 
     public File Self { get { return this; } }
@@ -25,7 +26,7 @@ namespace FancyFileRenamer.TaskLibrary
 
     public string Filename { get; private set; }
 
-    public string newFilename { get; set; }
+    public string NewFilename { get; set; }
 
     public long Size
     {
@@ -46,7 +47,7 @@ namespace FancyFileRenamer.TaskLibrary
     {
       try
       {
-        System.IO.File.Move(Filepath, Path.Combine(Path.GetDirectoryName(Filepath), newFilename));
+        System.IO.File.Move(Filepath, Path.Combine(Path.GetDirectoryName(Filepath), NewFilename));
       }
       catch
       {

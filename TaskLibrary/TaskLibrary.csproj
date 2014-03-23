@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="File.cs" />
+    <Compile Include="ITask.cs" />
+    <Compile Include="ITaskEditControl.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
     <Compile Include="RenamingTasks\ReplaceTask.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="RenamingTasks\IRenamingTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortingTasks\SizeSorting.cs" />
+    <Compile Include="TaskChangedEventHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

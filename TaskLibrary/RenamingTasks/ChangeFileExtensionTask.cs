@@ -18,7 +18,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public void ApplyOn(File datei)
     {
-      datei.newFilename = System.IO.Path.ChangeExtension(datei.newFilename, NewExtension);
+      datei.NewFilename = System.IO.Path.ChangeExtension(datei.NewFilename, NewExtension);
     }
 
     public IRenamingTask Self

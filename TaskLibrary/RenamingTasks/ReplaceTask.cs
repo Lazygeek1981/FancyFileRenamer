@@ -22,7 +22,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
     public void ApplyOn(File datei)
     {
       if (SearchFor.IsFilled())
-        datei.newFilename = datei.newFilename.Replace(SearchFor, ReplaceWith);
+        datei.NewFilename = datei.NewFilename.Replace(SearchFor, ReplaceWith);
     }
 
     public string Description

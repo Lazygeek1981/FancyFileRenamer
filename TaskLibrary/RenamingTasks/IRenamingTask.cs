@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
-  public interface IRenamingTask
+  public interface IRenamingTask : ITask
   {
     void ApplyOn(File datei);
 

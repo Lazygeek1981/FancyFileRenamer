@@ -1,0 +1,13 @@
+﻿<Window x:Class="FancyFileRenamerWpf.TaskEditControl.ReplaceTaskEditControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ReplaceTaskEditControl" Height="300" Width="300">
+  <Grid>
+    <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+      <Label>Replace</Label>
+      <TextBox></TextBox>
+      <Label>With</Label>
+      <TextBox></TextBox>
+    </StackPanel>
+  </Grid>
+</Window>

@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FancyFileRenamer.TaskLibrary;
+using System.IO;
 
 namespace FancyFileRenamerWpf
 {
@@ -26,14 +28,21 @@ namespace FancyFileRenamerWpf
 
     public ObservableCollection<IRenamingTask> CurrentTasks { get; set; }
 
+    public Project Project { get; set; }
+
     public MainWindow()
     {
       InitializeComponent();
 
       DataContext = this;
+      Project = new FancyFileRenamer.TaskLibrary.Project();
 
       loadAvailableTasks();
       CurrentTasks = new ObservableCollection<IRenamingTask>();
+
+      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd"));
+      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd123"));
+      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd456"));
     }
 
     private void loadAvailableTasks()
@@ -60,12 +69,38 @@ namespace FancyFileRenamerWpf
 
     private void btnStartRenaming_Click(object sender, RoutedEventArgs e)
     {
-
+     
     }
 
     private void buttonLoadPath_Click(object sender, RoutedEventArgs e)
     {
+      if (txtPath.Text.IsFilled() && Directory.Exists(txtPath.Text))
+      {
+        Project.SourcePath = new DirectoryInfo(txtPath.Text);
+      }
+      else
+      {
+        MessageBox.Show("Can't find or open directory", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+      }
+    }
 
+    private void buttonStartRenaming_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void renamingTasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+      if (renamingTasks.SelectedItems != null && renamingTasks.SelectedItems.Count > 0)
+      {
+        ITask selectedTask = renamingTasks.SelectedItems[0].As<ITask>();
+
+        ITaskEditControl editControl = TaskEditControlFactory.GetControlForTask(selectedTask);
+
+        if (editControl != null)
+          editControl.As<Window>().ShowDialog();
+
+      }
     }
   }
 }
