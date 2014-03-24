@@ -58,6 +58,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="TaskEditControlFactory.cs" />
+    <Compile Include="TaskEditControl\ReplaceTaskEditControl2.xaml.cs">
+      <DependentUpon>ReplaceTaskEditControl2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskEditControl\ReplaceTaskEditControl.xaml.cs">
       <DependentUpon>ReplaceTaskEditControl.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TaskEditControl\ReplaceTaskEditControl2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TaskEditControl\ReplaceTaskEditControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -44,19 +44,11 @@ namespace FancyFileRenamer.TaskLibrary
       {
         file.NewFilename = file.Filename;
 
-
-
         foreach (IRenamingTask task in renamingTasks)
         {
           task.ApplyOn(file);
         }
-
-#if DEBUG
-        Console.WriteLine(file.Filename + " --> " + file.NewFilename);
-#endif
       }
-
-      
     }
   }
 }

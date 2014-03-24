@@ -41,9 +41,13 @@ namespace FancyFileRenamerWpf
 
       CurrentTasks = new ObservableCollection<IRenamingTask>();
 
-      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd"));
-      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd123"));
-      Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd456"));
+#if DEBUG
+      for (int i = 0; i < 1000; i++)
+      {
+        Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("example" + i.ToString("0000")));
+      }
+
+#endif
     }
 
     private void loadAvailableTasks()
@@ -108,7 +112,10 @@ namespace FancyFileRenamerWpf
           bool? result = editControl.As<Window>().ShowDialog();
 
           if (result.HasValue && result.Value)
+          {
             Project.ApplyTasks();
+            renamingTasks.UpdateLayout();
+          }
         }
 
       }
