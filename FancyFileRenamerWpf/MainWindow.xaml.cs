@@ -38,6 +38,7 @@ namespace FancyFileRenamerWpf
       Project = new FancyFileRenamer.TaskLibrary.Project();
 
       loadAvailableTasks();
+
       CurrentTasks = new ObservableCollection<IRenamingTask>();
 
       Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("asd"));
@@ -51,7 +52,6 @@ namespace FancyFileRenamerWpf
       AllAvailableTasks.Add(null);
       AllAvailableTasks.Add(new ReplaceTask());
       AllAvailableTasks.Add(new ChangeFileExtensionTask());
-
     }
 
     private void renamingTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,13 +63,19 @@ namespace FancyFileRenamerWpf
 
     private void buttonRenamingTaskAdd_Click(object sender, RoutedEventArgs e)
     {
-      CurrentTasks.Add((comboTasks.SelectedItem as IRenamingTask).GetNewInstance());
+      IRenamingTask task = (comboTasks.SelectedItem as IRenamingTask).GetNewInstance();
+
+      task.Changed += taskChanged;
+
+      CurrentTasks.Add(task);
+      Project.RenamingTasks.Add(task);
+
       comboTasks.SelectedIndex = 0;
     }
 
-    private void btnStartRenaming_Click(object sender, RoutedEventArgs e)
+    void taskChanged(ITask sender, EventArgs e)
     {
-     
+      Project.ApplyTasks();
     }
 
     private void buttonLoadPath_Click(object sender, RoutedEventArgs e)
@@ -98,7 +104,12 @@ namespace FancyFileRenamerWpf
         ITaskEditControl editControl = TaskEditControlFactory.GetControlForTask(selectedTask);
 
         if (editControl != null)
-          editControl.As<Window>().ShowDialog();
+        {
+          bool? result = editControl.As<Window>().ShowDialog();
+
+          if (result.HasValue && result.Value)
+            Project.ApplyTasks();
+        }
 
       }
     }

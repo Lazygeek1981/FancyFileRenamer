@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  public class CreationDateSorting : ISortingTask
+  public class CreationDateSorting : AbstractTask, ISortingTask
   {
     public CreationDateSorting()
     {

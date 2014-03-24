@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  public class FilenameSorting : ISortingTask
+  public class FilenameSorting : AbstractTask, ISortingTask
   {
     public FilenameSorting()
       : this(SortingOrder.Ascending)

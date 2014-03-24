@@ -8,5 +8,6 @@ namespace FancyFileRenamer.TaskLibrary
 {
   public interface ITask
   {
+    event TaskChangedEventHandler Changed;
   }
 }

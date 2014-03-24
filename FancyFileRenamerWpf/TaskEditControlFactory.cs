@@ -13,8 +13,10 @@ namespace FancyFileRenamerWpf
   {
     public static ITaskEditControl GetControlForTask(ITask task)
     {
+      ITaskEditControl editControl = null;
+
       if (task is ReplaceTask)
-        return new ReplaceTaskEditControl();
+        editControl = new ReplaceTaskEditControl();
       //else if (task is EnumerateTask)
       //  return new EnumerateTaskEditControl();
       //else if (task is InsertTask)
@@ -23,6 +25,10 @@ namespace FancyFileRenamerWpf
       //  return new ClearEntireFilenameTaskEditControl();
       else
         throw new InvalidOperationException("Can't find edit control for task");
+
+      editControl.SetTaskToControl(task);
+
+      return editControl;
     }
   }
 }

@@ -13,7 +13,7 @@ namespace FancyFileRenamer.TaskLibrary
   {
     private DirectoryInfo sourcePath = null;
     private List<IRenamingTask> renamingTasks = new List<IRenamingTask>();
-    private ObservableCollection<File> files = new ObservableCollection<File>();
+    private TrulyObservableCollection<File> files = new TrulyObservableCollection<File>();
     private ObservableCollection<File> targetFiles = new ObservableCollection<File>();
 
     private void sourcePathChanged()
@@ -27,7 +27,7 @@ namespace FancyFileRenamer.TaskLibrary
 
     public DirectoryInfo SourcePath { get { return sourcePath; } set { sourcePath = value; sourcePathChanged(); } }
 
-    public ObservableCollection<File> Files { get { return files; } set { files = value; } }
+    public TrulyObservableCollection<File> Files { get { return files; } set { files = value; } }
 
     //public List<File> TargetFiles { get { return targetFiles; } set { targetFiles = value; } }
 
@@ -44,19 +44,19 @@ namespace FancyFileRenamer.TaskLibrary
       {
         file.NewFilename = file.Filename;
 
-#if DEBUG
-        Console.WriteLine(file.NewFilename);
-#endif
+
 
         foreach (IRenamingTask task in renamingTasks)
         {
           task.ApplyOn(file);
+        }
 
 #if DEBUG
-          Console.WriteLine(file.NewFilename);
+        Console.WriteLine(file.Filename + " --> " + file.NewFilename);
 #endif
-        }
       }
+
+      
     }
   }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  public class SizeSorting : ISortingTask
+  public class SizeSorting : AbstractTask, ISortingTask
   {
     public SizeSorting()
     {

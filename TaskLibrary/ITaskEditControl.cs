@@ -11,7 +11,5 @@ namespace FancyFileRenamer.TaskLibrary
     void UpdateTaskFromControl();
 
     void SetTaskToControl(ITask task);
-
-    event TaskChangedEventHandler TaskChanged;
   }
 }

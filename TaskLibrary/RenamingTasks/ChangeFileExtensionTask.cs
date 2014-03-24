@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
-  public class ChangeFileExtensionTask : IRenamingTask
+  public class ChangeFileExtensionTask : AbstractTask, IRenamingTask
   {
     public ChangeFileExtensionTask()
     {

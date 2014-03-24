@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary
 {
-  public delegate void TaskChangedEventHandler(ITaskEditControl sender, ITask changedTask);
+  public delegate void TaskChangedEventHandler(ITask sender, EventArgs e);
 }

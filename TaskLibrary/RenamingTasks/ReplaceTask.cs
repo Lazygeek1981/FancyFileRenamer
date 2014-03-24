@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
-  public class ReplaceTask : IRenamingTask
+  public class ReplaceTask : AbstractTask, IRenamingTask
   {
+    private string searchFor = String.Empty;
+    private string replaceWith = String.Empty;
+
     public ReplaceTask()
-    {
-      SearchFor = String.Empty;
-      ReplaceWith = String.Empty;
+    { 
+     //nothing to do here
     }
 
-    public string SearchFor { get; set; }
+    public string SearchFor { get { return searchFor; } set { searchFor = value; changed(); } }
 
-    public string ReplaceWith { get; set; }
+    public string ReplaceWith { get { return replaceWith; } set { replaceWith = value; changed(); } }
 
     public void ApplyOn(File datei)
     {
