@@ -16,7 +16,7 @@ namespace FancyFileRenamerWpf
       ITaskEditControl editControl = null;
 
       if (task is ReplaceTask)
-        editControl = new ReplaceTaskEditControl();
+        editControl = new ReplaceTaskEditControl2();
       //else if (task is EnumerateTask)
       //  return new EnumerateTaskEditControl();
       //else if (task is InsertTask)
