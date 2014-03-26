@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary
 {
-  public interface ITask
+  public interface ITask : INotifyPropertyChanged
   {
     event TaskChangedEventHandler Changed;
   }

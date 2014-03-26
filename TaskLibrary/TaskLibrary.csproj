@@ -49,6 +49,7 @@
     <Compile Include="ITaskEditControl.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
+    <Compile Include="RenamingTasks\EnumerateTask.cs" />
     <Compile Include="RenamingTasks\ReplaceTask.cs" />
     <Compile Include="SortingTasks\CreationDateSorting.cs" />
     <Compile Include="SortingTasks\FilenameSorting.cs" />

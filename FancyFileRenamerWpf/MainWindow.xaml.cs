@@ -26,7 +26,7 @@ namespace FancyFileRenamerWpf
   {
     public ObservableCollection<IRenamingTask> AllAvailableTasks { get; set; }
 
-    public ObservableCollection<IRenamingTask> CurrentTasks { get; set; }
+    public TrulyObservableCollection<IRenamingTask> CurrentTasks { get; set; }
 
     public Project Project { get; set; }
 
@@ -39,7 +39,7 @@ namespace FancyFileRenamerWpf
 
       loadAvailableTasks();
 
-      CurrentTasks = new ObservableCollection<IRenamingTask>();
+      CurrentTasks = new TrulyObservableCollection<IRenamingTask>();
 
 #if DEBUG
       for (int i = 0; i < 1000; i++)

@@ -15,5 +15,13 @@ namespace FancyFileRenamer.TaskLibrary
     }
 
     public event TaskChangedEventHandler Changed;
+    
+    public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+    protected void propertyChanged(string propertyName)
+    {
+      if (PropertyChanged != null)
+        PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    }
   }
 }

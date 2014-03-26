@@ -34,7 +34,7 @@
         </ListView.ItemTemplate>
       </ListView>
     </GroupBox>
-    <GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Task" Padding="5" Margin="5">
+    <GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Tasks" Padding="5" Margin="5">
       <Grid>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"></ColumnDefinition>
@@ -75,7 +75,7 @@
         <Button Grid.Column="1" Grid.Row="4" Name="buttonRenamingTaskDown">\/</Button>
       </Grid>
     </GroupBox>
-    <GroupBox Grid.Row="2" Grid.Column="1" MinHeight="300" Header="Sorting Task" Padding="5" Margin="5">
+    <GroupBox Grid.Row="2" Grid.Column="1" MinHeight="300" Header="Sorting Tasks" Padding="5" Margin="5">
       <Grid>
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"></ColumnDefinition>
