@@ -19,59 +19,44 @@ namespace FancyFileRenamerWpf.TaskEditControl
   /// <summary>
   /// Interaction logic for EnumerateTaskEditControl.xaml
   /// </summary>
-  public partial class EnumerateTaskEditControl : Window, ITaskEditControl
+  public partial class ClearEntireFilenameTaskEditControl : Window, ITaskEditControl
   {
     private bool isLatched = false;
 
-    public EnumerateTask Task { get; set; }
+    public ClearEntireFilenameTask Task { get; set; }
 
-    public EnumerateTaskEditControl()
+    public ClearEntireFilenameTaskEditControl()
     {
       isLatched = true;
       InitializeComponent();
       isLatched = false;
     }
 
-    #region ITaskEditControl Members
-
     public void UpdateTaskFromControl()
     {
       if (isLatched)
         return;
 
-      Task.CustomPosition = textCustomPosition.Text.ToIntegerSafely(0);
-      Task.StartAt = textStartWith.Text.ToIntegerSafely(0);
-      Task.NumberFormat = textFormat.Text;
-      Task.InsertAt = (EnumerateNumberPosition)comboInsertPosition.SelectedIndex;
+      Task.ClearFileExtension = checkClearExtension.IsChecked.Value;
     }
 
     public void SetTaskToControl(ITask task)
     {
       isLatched = true;
 
-      Task = task.As<EnumerateTask>();
+      Task = task.As<ClearEntireFilenameTask>();
 
-      textCustomPosition.Text = Task.CustomPosition.ToString();
-      textStartWith.Text = Task.StartAt.ToString();
-      textFormat.Text = Task.NumberFormat;
-      comboInsertPosition.SelectedIndex = (int)Task.InsertAt;
+      checkClearExtension.IsChecked = Task.ClearFileExtension;
 
       isLatched = false;
     }
-
-    #endregion
 
     private void buttonOK_Click(object sender, RoutedEventArgs e)
     {
       DialogResult = true;
     }
 
-    private void textChanged(object sender, TextChangedEventArgs e)
-    {
-      UpdateTaskFromControl();
-    }
-
-    private void comboInsertPosition_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private void checkChanged(object sender, RoutedEventArgs e)
     {
       UpdateTaskFromControl();
     }

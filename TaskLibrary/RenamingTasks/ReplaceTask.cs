@@ -17,9 +17,9 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
      //nothing to do here
     }
 
-    public string SearchFor { get { return searchFor; } set { searchFor = value; changed(); propertyChanged("SearchFor"); } }
+    public string SearchFor { get { return searchFor; } set { searchFor = value; propertyChanged("SearchFor"); } }
 
-    public string ReplaceWith { get { return replaceWith; } set { replaceWith = value; changed(); propertyChanged("ReplaceWith"); } }
+    public string ReplaceWith { get { return replaceWith; } set { replaceWith = value; propertyChanged("ReplaceWith"); } }
 
     public void ApplyOn(File datei)
     {
@@ -49,8 +49,8 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public void ResetTask()
     {
-      SearchFor = String.Empty;
-      ReplaceWith = String.Empty;
+      searchFor = String.Empty;
+      replaceWith = String.Empty;
     }
   }
 }

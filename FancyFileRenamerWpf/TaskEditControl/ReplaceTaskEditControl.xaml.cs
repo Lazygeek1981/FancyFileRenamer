@@ -22,14 +22,12 @@ namespace FancyFileRenamerWpf.TaskEditControl
   /// </summary>
   public partial class ReplaceTaskEditControl : Window, ITaskEditControl
   {
+    private bool isLatched = false;
+
     public static RoutedCommand OkCommand = new RoutedCommand();
     public static RoutedCommand CancelCommand = new RoutedCommand();
 
     public ReplaceTask Task { get; set; }
-
-    public event TaskChangedEventHandler TaskChanged;
-
-    private Timer timer = new Timer(2000d);
 
     public ReplaceTaskEditControl()
     {
@@ -37,33 +35,25 @@ namespace FancyFileRenamerWpf.TaskEditControl
 
       OkCommand.InputGestures.Add(new KeyGesture(Key.Enter));
       CancelCommand.InputGestures.Add(new KeyGesture(Key.Escape));
-
-      timer.Elapsed += timer_Elapsed;
-    }
-
-    void timer_Elapsed(object sender, ElapsedEventArgs e)
-    {
-      string searchFor = txtSearchFor.Dispatcher.Invoke(new Func<string>(() => txtSearchFor.Text));
-      string replaceWith = txtReplaceWith.Dispatcher.Invoke(new Func<string>(() => txtReplaceWith.Text));
-
-      if (Task.SearchFor != searchFor || Task.ReplaceWith != replaceWith)
-        UpdateTaskFromControl();
     }
 
     public void UpdateTaskFromControl()
     {
-      string searchFor = txtSearchFor.Dispatcher.Invoke(new Func<string>(() => txtSearchFor.Text));
-      string replaceWith = txtReplaceWith.Dispatcher.Invoke(new Func<string>(() => txtReplaceWith.Text));
-
-      Task.SearchFor = searchFor;
-      Task.ReplaceWith = replaceWith;
+      Task.SearchFor = txtSearchFor.Text;
+      Task.ReplaceWith = txtReplaceWith.Text;      
     }
 
     public void SetTaskToControl(ITask task)
     {
-      Task = task.As<ReplaceTask>();
-    }
+      isLatched = true;
 
+      Task = task.As<ReplaceTask>();
+
+      txtReplaceWith.Text = Task.ReplaceWith;
+      txtSearchFor.Text = Task.SearchFor;
+
+      isLatched = false;
+    }
 
     private void buttonOK_Click(object sender, RoutedEventArgs e)
     {
@@ -87,8 +77,11 @@ namespace FancyFileRenamerWpf.TaskEditControl
 
     private void textChanged(object sender, TextChangedEventArgs e)
     {
-      timer.Stop();
-      timer.Start();
+      if (isLatched)
+        return;
+
+      if (Task.SearchFor != txtSearchFor.Text || Task.ReplaceWith != txtReplaceWith.Text)
+        UpdateTaskFromControl();
     }
   }
 }

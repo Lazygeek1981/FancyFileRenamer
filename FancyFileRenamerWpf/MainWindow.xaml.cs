@@ -55,6 +55,8 @@ namespace FancyFileRenamerWpf
       AllAvailableTasks = new ObservableCollection<IRenamingTask>();
       AllAvailableTasks.Add(null);
       AllAvailableTasks.Add(new ReplaceTask());
+      AllAvailableTasks.Add(new EnumerateTask());
+      AllAvailableTasks.Add(new ClearEntireFilenameTask());
       AllAvailableTasks.Add(new ChangeFileExtensionTask());
     }
 
@@ -69,17 +71,19 @@ namespace FancyFileRenamerWpf
     {
       IRenamingTask task = (comboTasks.SelectedItem as IRenamingTask).GetNewInstance();
 
-      task.Changed += taskChanged;
-
+      task.PropertyChanged += task_PropertyChanged;
       CurrentTasks.Add(task);
       Project.RenamingTasks.Add(task);
 
       comboTasks.SelectedIndex = 0;
+
+      Project.ApplyTasks();
     }
 
-    void taskChanged(ITask sender, EventArgs e)
+    void task_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
-      Project.ApplyTasks();
+      if (checkRealTimeUpdate.IsChecked.Value)
+        Project.ApplyTasks();
     }
 
     private void buttonLoadPath_Click(object sender, RoutedEventArgs e)

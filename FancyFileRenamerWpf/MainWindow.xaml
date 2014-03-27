@@ -23,7 +23,9 @@
     <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal">
       <TextBox Name="txtPath" MinWidth="400" MinHeight="21" Margin="5" />
       <Button Name="buttonLoadPath" Click="buttonLoadPath_Click" Width="Auto" Margin="5" >Load Path</Button>
-      <Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="300,5">Start Renaming</Button>
+      <CheckBox Name="checkRealTimeUpdate" IsChecked="True" IsThreeState="False" VerticalAlignment="Center" Margin="50,5">RealTime Update</CheckBox>
+      <Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="150,5">Start Renaming</Button>
+      
     </StackPanel>
     <GroupBox Header="Source Files" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" Margin="5">
       <ListView Name="listSource" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}">

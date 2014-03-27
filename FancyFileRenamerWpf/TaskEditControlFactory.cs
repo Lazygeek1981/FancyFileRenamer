@@ -16,11 +16,11 @@ namespace FancyFileRenamerWpf
       ITaskEditControl editControl = null;
 
       if (task is ReplaceTask)
-        editControl = new ReplaceTaskEditControl2();
-      //else if (task is EnumerateTask)
-      //  return new EnumerateTaskEditControl();
-      //else if (task is InsertTask)
-      //  return new InsertTaskEditControl();
+        editControl = new ReplaceTaskEditControl();
+      else if (task is EnumerateTask)
+        editControl = new EnumerateTaskEditControl();
+      else if (task is ClearEntireFilenameTask)
+        editControl = new ClearEntireFilenameTaskEditControl();
       //else if (task is ClearEntireFilenameTask)
       //  return new ClearEntireFilenameTaskEditControl();
       else

@@ -40,6 +40,8 @@ namespace FancyFileRenamer.TaskLibrary
 
     public void ApplyTasks()
     {
+      renamingTasks.ForEach(x => x.ResetTask());
+
       foreach (File file in Files)
       {
         file.NewFilename = file.Filename;

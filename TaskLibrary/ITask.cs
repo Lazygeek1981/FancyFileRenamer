@@ -9,6 +9,6 @@ namespace FancyFileRenamer.TaskLibrary
 {
   public interface ITask : INotifyPropertyChanged
   {
-    event TaskChangedEventHandler Changed;
+    
   }
 }

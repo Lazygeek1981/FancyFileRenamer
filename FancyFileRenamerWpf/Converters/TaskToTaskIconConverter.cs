@@ -34,7 +34,9 @@ namespace FancyFileRenamerWpf.Converters
     {
       icons = new Dictionary<Type, BitmapSource>();
       icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ReplaceTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
-      icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ChangeFileExtensionTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_enumerate.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ChangeFileExtensionTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_changeExtension.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.EnumerateTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_enumerate.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ClearEntireFilenameTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_clear.png"), UriKind.Absolute)));
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

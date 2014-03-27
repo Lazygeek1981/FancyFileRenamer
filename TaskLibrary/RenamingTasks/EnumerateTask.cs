@@ -9,23 +9,23 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
   public class EnumerateTask : AbstractTask, IRenamingTask
   {
-
+    private int startAt = 0;
+    private string numberFormat = "00";
+    private EnumerateNumberPosition insertAt = EnumerateNumberPosition.Start;
+    private int customPosition = 0;
 
     public EnumerateTask()
     {
-      StartAt = 0;
-      NumberFormat = "00";
-      InsertAt = EnumerateNumberPosition.Start;
-      CustomPosition = 0;
+      //nothing todo here
     }
 
-    public int StartAt { get; set; }
+    public int StartAt { get { return startAt; } set { startAt = value; propertyChanged("StartAt"); } }
 
-    public string NumberFormat { get; set; }
+    public string NumberFormat { get { return numberFormat; } set { numberFormat = value; propertyChanged("NumberFormat"); } }
 
-    public EnumerateNumberPosition InsertAt { get; set; }
+    public EnumerateNumberPosition InsertAt { get { return insertAt; } set { insertAt = value; propertyChanged("InsertAt"); } }
 
-    public int CustomPosition { get; set; }
+    public int CustomPosition { get { return customPosition; } set { customPosition = value; propertyChanged("CustomPosition"); } }
 
     protected int? currentCounter;
 
@@ -64,7 +64,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       }
     }
 
-    public ITask Self
+    public IRenamingTask Self
     {
       get { return this; }
     }
@@ -79,7 +79,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return "Enumerate"; }
     }
 
-    public ITask GetNewInstance()
+    public IRenamingTask GetNewInstance()
     {
       return new EnumerateTask();
     }

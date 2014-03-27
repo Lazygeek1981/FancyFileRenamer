@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("FancyFileRenamerWpf")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("FancyFileRenamerWpf")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCompany("Zimmermann EDV Service")]
+[assembly: AssemblyProduct("Fancy File Renamer")]
+[assembly: AssemblyCopyright("Copyright © Zimmermann EDV Service 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
