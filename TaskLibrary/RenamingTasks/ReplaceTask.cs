@@ -49,8 +49,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public void ResetTask()
     {
-      searchFor = String.Empty;
-      replaceWith = String.Empty;
+      //nothing to do here
     }
   }
 }

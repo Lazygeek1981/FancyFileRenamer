@@ -44,7 +44,7 @@ namespace FancyFileRenamerWpf
 #if DEBUG
       for (int i = 0; i < 1000; i++)
       {
-        Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("example" + i.ToString("0000")));
+        Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("example" + i.ToString("0000")+".avi"));
       }
 
 #endif
@@ -58,6 +58,7 @@ namespace FancyFileRenamerWpf
       AllAvailableTasks.Add(new EnumerateTask());
       AllAvailableTasks.Add(new ClearEntireFilenameTask());
       AllAvailableTasks.Add(new ChangeFileExtensionTask());
+      AllAvailableTasks.Add(new InsertTask());
     }
 
     private void renamingTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)

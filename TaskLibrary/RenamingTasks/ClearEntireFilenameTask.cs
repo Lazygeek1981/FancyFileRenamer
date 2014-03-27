@@ -23,7 +23,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       if (ClearFileExtension)
         datei.NewFilename = String.Empty;
       else
-        datei.NewFilename = String.Empty + Path.GetExtension(datei.Filename);
+        datei.NewFilename = String.Empty + Path.GetExtension(datei.NewFilename);
     }
 
     public IRenamingTask Self

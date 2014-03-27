@@ -4,10 +4,6 @@
         xmlns:local="clr-namespace:FancyFileRenamerWpf.TaskEditControl"
         Title="Replace task edit" Height="300" Width="300" Icon="../Images/edit_task.png" ShowInTaskbar="False" Topmost="True" WindowStartupLocation="CenterOwner"
          FocusManager.FocusedElement="{Binding ElementName=txtReplace}">
-  <Window.CommandBindings>
-    <CommandBinding Command="{x:Static local:ReplaceTaskEditControl.OkCommand}" Executed="OkCommandExecuted"/>
-    <CommandBinding Command="{x:Static local:ReplaceTaskEditControl.CancelCommand}" Executed="CancelCommandExecuted"/>
-  </Window.CommandBindings>
   <Grid Margin="10,10,10,10">
     <Grid.RowDefinitions>
       <RowDefinition Height="*"></RowDefinition>

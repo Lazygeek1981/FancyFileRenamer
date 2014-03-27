@@ -21,8 +21,8 @@ namespace FancyFileRenamerWpf
         editControl = new EnumerateTaskEditControl();
       else if (task is ClearEntireFilenameTask)
         editControl = new ClearEntireFilenameTaskEditControl();
-      //else if (task is ClearEntireFilenameTask)
-      //  return new ClearEntireFilenameTaskEditControl();
+      else if (task is InsertTask)
+        editControl = new InsertTaskEditControl();
       else
         throw new InvalidOperationException("Can't find edit control for task");
 

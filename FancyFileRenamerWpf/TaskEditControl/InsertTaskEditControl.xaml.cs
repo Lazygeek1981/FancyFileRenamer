@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,20 +17,18 @@ using FancyFileRenamer.TaskLibrary.RenamingTasks;
 namespace FancyFileRenamerWpf.TaskEditControl
 {
   /// <summary>
-  /// Interaction logic for ReplaceTaskEditControl.xaml
+  /// Interaction logic for EnumerateTaskEditControl.xaml
   /// </summary>
-  public partial class ReplaceTaskEditControl : Window, ITaskEditControl
+  public partial class InsertTaskEditControl : Window, ITaskEditControl
   {
     private bool isLatched = false;
 
-    public ReplaceTask Task { get; set; }
+    public InsertTask Task { get; set; }
 
-    public ReplaceTaskEditControl()
+    public InsertTaskEditControl()
     {
       isLatched = true;
-
       InitializeComponent();
-
       isLatched = false;
     }
 
@@ -40,18 +37,19 @@ namespace FancyFileRenamerWpf.TaskEditControl
       if (isLatched)
         return;
 
-      Task.SearchFor = txtSearchFor.Text;
-      Task.ReplaceWith = txtReplaceWith.Text;
+      Task.Position = textAtPosition.Text.ToIntegerSafely(0);
+      Task.InsertValue = textInsert.Text;
+
     }
 
     public void SetTaskToControl(ITask task)
     {
       isLatched = true;
 
-      Task = task.As<ReplaceTask>();
+      Task = task.As<InsertTask>();
 
-      txtReplaceWith.Text = Task.ReplaceWith;
-      txtSearchFor.Text = Task.SearchFor;
+      textInsert.Text = Task.InsertValue;
+      textAtPosition.Text = Task.Position.ToString();
 
       isLatched = false;
     }
@@ -65,5 +63,12 @@ namespace FancyFileRenamerWpf.TaskEditControl
     {
       UpdateTaskFromControl();
     }
+
+    private void comboInsertPosition_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      UpdateTaskFromControl();
+    }
+
+    
   }
 }
