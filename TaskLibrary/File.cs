@@ -45,6 +45,8 @@ namespace FancyFileRenamer.TaskLibrary
 
     public DateTime LastWriteDate { get { return fileinfo.LastWriteTime; } }
 
+    public DateTime? ExifPhotoCreationDate { get; set; }
+
     public void DoRename()
     {
       try

@@ -66,6 +66,7 @@ namespace FancyFileRenamerWpf
       buttonRenamingTaskDown.IsEnabled = renamingTasks.SelectedIndex < renamingTasks.Items.Count - 1;
       buttonRenamingTaskUp.IsEnabled = renamingTasks.SelectedIndex > 0;
       buttonRenamingTaskRemove.IsEnabled = renamingTasks.SelectedItem != null;
+      buttonRenamingTaskEdit.IsEnabled = renamingTasks.SelectedItem != null;
     }
 
     private void buttonRenamingTaskAdd_Click(object sender, RoutedEventArgs e)
@@ -105,6 +106,17 @@ namespace FancyFileRenamerWpf
     }
 
     private void renamingTasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+      editTask();
+    }
+
+    private void buttonRenamingTaskEdit_Click(object sender, RoutedEventArgs e)
+    {
+      editTask();
+    }
+
+
+    private void editTask()
     {
       if (renamingTasks.SelectedItems != null && renamingTasks.SelectedItems.Count > 0)
       {

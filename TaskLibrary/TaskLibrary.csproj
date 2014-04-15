@@ -54,6 +54,7 @@
     <Compile Include="RenamingTasks\InsertTask.cs" />
     <Compile Include="RenamingTasks\ReplaceTask.cs" />
     <Compile Include="SortingTasks\CreationDateSorting.cs" />
+    <Compile Include="SortingTasks\ExifDateSorting.cs" />
     <Compile Include="SortingTasks\FilenameSorting.cs" />
     <Compile Include="SortingTasks\ISortingTask.cs" />
     <Compile Include="MultiComparer.cs" />
