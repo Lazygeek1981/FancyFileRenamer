@@ -102,7 +102,11 @@ namespace FancyFileRenamerWpf
 
     private void buttonStartRenaming_Click(object sender, RoutedEventArgs e)
     {
-
+      if (Project != null && Project.Files.All(x => x.IsValid))
+      {
+        Project.ApplyTasks();
+        Project.DoRenaming();
+      }
     }
 
     private void renamingTasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -136,6 +140,16 @@ namespace FancyFileRenamerWpf
         }
 
       }
+    }
+
+    private void buttonRenamingTaskRemove_Click(object sender, RoutedEventArgs e)
+    {
+      IRenamingTask task = renamingTasks.SelectedItem.As<IRenamingTask>();
+
+      CurrentTasks.Remove(task);
+      Project.RenamingTasks.Remove(task);
+
+      Project.ApplyTasks();
     }
   }
 }

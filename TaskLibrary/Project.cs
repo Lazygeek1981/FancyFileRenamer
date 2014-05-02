@@ -52,5 +52,23 @@ namespace FancyFileRenamer.TaskLibrary
         }
       }
     }
+
+    public void DoRenaming()
+    {
+      StringBuilder sb = new StringBuilder();
+
+      foreach (File file in Files)
+      {
+        try
+        {
+          sb.AppendLine(String.Format("{0} ----> {1}", file.Filename, file.NewFilename));
+          file.DoRename();
+        }
+        catch (Exception ex)
+        {
+          sb.AppendLine(String.Format("{0} --  ERROR --> {1}", file.Filename, ex.GetType().ToString()));
+        }
+      }
+    }
   }
 }
