@@ -69,12 +69,12 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return this; }
     }
 
-    public string Description
+    public override string Description
     {
       get { return "Enumerate"; }
     }
 
-    public string NameInTaskSelectionList
+    public override string NameInTaskSelectionList
     {
       get { return "Enumerate"; }
     }

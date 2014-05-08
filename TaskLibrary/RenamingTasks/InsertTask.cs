@@ -39,12 +39,12 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return this; }
     }
 
-    public string Description
+    public override string Description
     {
       get { return String.Format("Insert text '{0}' at position '{1}'", insertValue.IsFilled() ? insertValue : "<empty>", position); }
     }
 
-    public string NameInTaskSelectionList
+    public override string NameInTaskSelectionList
     {
       get { return "Insert text"; }
     }

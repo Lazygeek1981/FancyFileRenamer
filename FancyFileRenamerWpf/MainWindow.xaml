@@ -8,6 +8,7 @@
     <converters:ComboBoxItemToBoolConverter x:Key="comboBoxItemToBoolConverter" />
     <converters:TaskToTaskIconConverter x:Key="taskToTaskIconConverter" />
     <converters:ValidToColorConverter x:Key="validToColorConverter" />
+    <converters:DateTimeToStringConverter x:Key="dateTimeToStringConverter" />
   </Window.Resources>
   <Grid>
     <Grid.ColumnDefinitions>
@@ -25,13 +26,16 @@
       <Button Name="buttonLoadPath" Click="buttonLoadPath_Click" Width="Auto" Margin="5" >Load Path</Button>
       <CheckBox Name="checkRealTimeUpdate" IsChecked="True" IsThreeState="False" VerticalAlignment="Center" Margin="50,5">RealTime Update</CheckBox>
       <Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="150,5">Start Renaming</Button>
-      
     </StackPanel>
     <GroupBox Header="Source Files" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" Margin="5">
-      <ListView Name="listSource" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}">
+      <ListView Name="listSource" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <Label Content="{Binding Filename}" />
+            <StackPanel Orientation="Horizontal">
+              <Label Content="{Binding Filename}" />
+              <Label Content="{Binding Size }" />
+              <Label Content="{Binding ExifPhotoCreationDate, Converter={StaticResource dateTimeToStringConverter}}" />
+            </StackPanel>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
@@ -50,12 +54,12 @@
           <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox Grid.Column="0" Grid.Row="0" ItemsSource="{Binding AllAvailableTasks}" Name="comboTasks">
+        <ComboBox Grid.Column="0" Grid.Row="0" ItemsSource="{Binding AllAvailableRenamingTasks}" Name="comboTasks">
           <ComboBox.ItemTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal">
-              <Image Height="32" Width="32" Source="{Binding Converter={StaticResource taskToTaskIconConverter}}" />
-              <Label MinHeight="32" Content="{Binding NameInTaskSelectionList}" />
+                <Image Height="32" Width="32" Source="{Binding Converter={StaticResource taskToTaskIconConverter}}" />
+                <Label MinHeight="32" Content="{Binding NameInTaskSelectionList}" />
               </StackPanel>
             </DataTemplate>
           </ComboBox.ItemTemplate>
@@ -87,22 +91,44 @@
           <ColumnDefinition Width="32"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-
+          <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="32"></RowDefinition>
           <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListBox Grid.Column="0" Grid.Row="0" Grid.RowSpan="5"></ListBox>
-        <Button Grid.Column="1" Grid.Row="0" Name="buttonSortingTaskUp">/\</Button>
-        <Button Grid.Column="1" Grid.Row="1" Name="buttonSortingTaskAdd">+</Button>
-        <Button Grid.Column="1" Grid.Row="2" Name="buttonSortingTaskRemove">-</Button>
-        <Button Grid.Column="1" Grid.Row="3" Name="buttonSortingTaskDown">\/</Button>
+        <ComboBox Grid.Column="0" Grid.Row="0" ItemsSource="{Binding AllAvailableSortingTasks}" Name="comboSortingTasks">
+          <ComboBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal">
+                <Image Height="32" Width="32" Source="{Binding Converter={StaticResource taskToTaskIconConverter}}" />
+                <Label MinHeight="32" Content="{Binding NameInTaskSelectionList}" />
+              </StackPanel>
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" Name="sortingTasks" SelectionChanged="sortingTasks_SelectionChanged" ItemsSource="{Binding CurrentSortingTasks}" MouseDoubleClick="renamingTasks_MouseDoubleClick">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Converter={StaticResource taskToTaskIconConverter}}" Width="32" Height="32" />
+                <Label Content="{Binding Description}" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Column="1" Grid.Row="0" Name="buttonSortingTaskAdd" IsEnabled="{Binding ElementName=comboSortingTasks, Path=SelectedItem, Converter={StaticResource comboBoxItemToBoolConverter}}" Click="buttonSortingTaskAdd_Click">+</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="buttonSortingTaskEdit" IsEnabled="{Binding ElementName=sortingTasks, Path=SelectedItem, Converter={StaticResource listBoxItemToBoolConverter}}" Click="buttonSortingTaskEdit_Click">
+          <Image Source="Images/edit_task.png" Height="16" Width="16" />
+        </Button>
+        <Button Grid.Column="1" Grid.Row="2" Name="buttonSortingTaskUp">/\</Button>
+        <Button Grid.Column="1" Grid.Row="3" Name="buttonSortingTaskRemove" Click="buttonSortingTaskRemove_Click">-</Button>
+        <Button Grid.Column="1" Grid.Row="4" Name="buttonSortingTaskDown">\/</Button>
       </Grid>
     </GroupBox>
     <GroupBox Grid.RowSpan="2" Grid.Column="2" Grid.Row="1" Margin="5" Header="Destination Files">
-      <ListView HorizontalContentAlignment="Stretch" Name="listResult" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}">
+      <ListView HorizontalContentAlignment="Stretch" Name="listResult" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listResult_ScrollChanged">
         <ListView.ItemTemplate>
           <DataTemplate>
             <Label Content="{Binding NewFilename}" Background="{Binding IsValid, Converter={StaticResource validToColorConverter} }" />

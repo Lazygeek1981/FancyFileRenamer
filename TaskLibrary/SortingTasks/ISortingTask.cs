@@ -9,5 +9,7 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
   public interface ISortingTask : IComparer<File>, ITask
   {
     SortingOrder Ordering { get; set; }
+
+    ISortingTask GetNewInstance();
   }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
-  class ExifDateSorting
+  public class ExifDateSorting
   {
   }
 }

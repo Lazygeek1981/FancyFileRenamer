@@ -26,12 +26,12 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return this; }
     }
 
-    public string Description
+    public override string Description
     {
       get { return String.Format("CHANGE FILE EXTENSION"); }
     }
 
-    public string NameInTaskSelectionList
+    public override string NameInTaskSelectionList
     {
       get { return "Change file extension"; }
     }

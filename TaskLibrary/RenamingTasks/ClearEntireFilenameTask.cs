@@ -31,12 +31,12 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return this; }
     }
 
-    public string Description
+    public override string Description
     {
       get { return clearFileExtension ? "Clear entire filename" : " Clear filename w/o extension"; }
     }
 
-    public string NameInTaskSelectionList
+    public override string NameInTaskSelectionList
     {
       get { return "Clear entire filename"; }
     }

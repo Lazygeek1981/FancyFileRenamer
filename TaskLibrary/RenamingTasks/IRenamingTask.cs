@@ -16,8 +16,6 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     string Description { get; }
 
-    string NameInTaskSelectionList { get; }
-
     IRenamingTask GetNewInstance();
 
     void ResetTask();

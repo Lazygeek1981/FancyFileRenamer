@@ -22,5 +22,26 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
       else
         return -fileA.CreationDate.CompareTo(fileB.CreationDate);
     }
+
+    public override string NameInTaskSelectionList
+    {
+      get { return "Creation Date"; }
+    }
+
+    #region ISortingTask Members
+
+
+    public ISortingTask GetNewInstance()
+    {
+      return new CreationDateSorting();
+
+    }
+
+    #endregion
+
+    public override string Description
+    {
+      get { return "Creation Date Sorting, " + (Ordering == SortingOrder.Ascending ? "ascending": "descending"); }
+    }
   }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -16,6 +17,14 @@ namespace FancyFileRenamer.TaskLibrary
       : base()
     {
       CollectionChanged += new NotifyCollectionChangedEventHandler(TrulyObservableCollection_CollectionChanged);
+    }
+
+    public TrulyObservableCollection(List<T> items)
+      :base()
+    {
+      CollectionChanged += new NotifyCollectionChangedEventHandler(TrulyObservableCollection_CollectionChanged);
+
+      items.ForEach(x=>Items.Add(x));
     }
 
     void TrulyObservableCollection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

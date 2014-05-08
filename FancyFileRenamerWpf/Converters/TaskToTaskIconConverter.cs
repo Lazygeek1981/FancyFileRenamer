@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using FancyFileRenamer.TaskLibrary;
 using FancyFileRenamer.TaskLibrary.RenamingTasks;
 
 namespace FancyFileRenamerWpf.Converters
@@ -21,10 +22,10 @@ namespace FancyFileRenamerWpf.Converters
     {
       if (icons == null)
       {
-        createIcons();      
+        createIcons();
       }
 
-      if (value == null || !(value is IRenamingTask))
+      if (value == null || !(value is ITask))
         return null;
       else
         return icons[value.GetType()];
@@ -38,6 +39,12 @@ namespace FancyFileRenamerWpf.Converters
       icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.EnumerateTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_enumerate.png"), UriKind.Absolute)));
       icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ClearEntireFilenameTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_clear.png"), UriKind.Absolute)));
       icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.InsertTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_insert.png"), UriKind.Absolute)));
+
+      //TODO
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.FilenameSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.SizeSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.CreationDateSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
+      //icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.FilenameSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

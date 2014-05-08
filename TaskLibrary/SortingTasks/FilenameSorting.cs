@@ -26,5 +26,25 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
       else
         return -fileA.Filename.CompareTo(fileB.Filename);
     }
+
+    public override string NameInTaskSelectionList
+    {
+      get { return "Filename"; }
+    }
+
+    #region ISortingTask Members
+
+
+    public ISortingTask GetNewInstance()
+    {
+      return new FilenameSorting();
+    }
+
+    #endregion
+
+    public override string Description
+    {
+      get { return "Filename sorting"; }
+    }
   }
 }

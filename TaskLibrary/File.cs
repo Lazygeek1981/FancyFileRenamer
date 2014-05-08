@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExifLib;
 
 namespace FancyFileRenamer.TaskLibrary
 {
@@ -13,13 +14,34 @@ namespace FancyFileRenamer.TaskLibrary
     private FileInfo fileinfo;
     private string newFilename;
 
+
+
     public File(string filepath)
     {
       fileinfo = new FileInfo(filepath);
+
+      checkForImageFile();
+
       Filepath = filepath;
       Filename = Path.GetFileName(filepath);
       newFilename = Filename;
       IsValid = true;
+    }
+
+    private void checkForImageFile()
+    {
+      if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))
+      {
+        using (ExifReader reader = new ExifReader(fileinfo.FullName))
+        {
+          DateTime date;
+
+          if (reader.GetTagValue<DateTime>(ExifTags.DateTime, out date))
+          {
+            ExifPhotoCreationDate = date;
+          }
+        }
+      }
     }
 
     public File Self { get { return this; } }
@@ -30,14 +52,14 @@ namespace FancyFileRenamer.TaskLibrary
 
     public string NewFilename { get { return newFilename; } set { newFilename = value; OnPropertyChanged(); } }
 
-    public long Size
+    public long? Size
     {
       get
       {
-        if (fileinfo != null)
+        if (fileinfo != null && fileinfo.Exists)
           return fileinfo.Length;
         else 
-          return -1;
+          return null;
       }
     }
 
@@ -67,6 +89,11 @@ namespace FancyFileRenamer.TaskLibrary
     {
       if (PropertyChanged != null)
         PropertyChanged(this, new PropertyChangedEventArgs("NewFilename"));
+    }
+
+    public override string ToString()
+    {
+      return "File: " + Filename + " --> " + NewFilename;
     }
   }
 }

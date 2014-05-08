@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FancyFileRenamer.TaskLibrary.RenamingTasks;
+using FancyFileRenamer.TaskLibrary.SortingTasks;
 
 namespace FancyFileRenamer.TaskLibrary
 {
@@ -13,8 +14,9 @@ namespace FancyFileRenamer.TaskLibrary
   {
     private DirectoryInfo sourcePath = null;
     private List<IRenamingTask> renamingTasks = new List<IRenamingTask>();
+    private List<ISortingTask> sortingTasks = new List<ISortingTask>();
+
     private TrulyObservableCollection<File> files = new TrulyObservableCollection<File>();
-    private ObservableCollection<File> targetFiles = new ObservableCollection<File>();
 
     private void sourcePathChanged()
     {
@@ -32,6 +34,24 @@ namespace FancyFileRenamer.TaskLibrary
     //public List<File> TargetFiles { get { return targetFiles; } set { targetFiles = value; } }
 
     public List<IRenamingTask> RenamingTasks { get { return renamingTasks; } set { renamingTasks = value; renamingTasksChanged(); } }
+
+    public List<ISortingTask> SortingTasks { get { return sortingTasks; } set { sortingTasks = value; sortingTasksChanged(); } }
+
+    private void sortingTasksChanged()
+    {
+      SortFiles();
+    }
+
+    public void SortFiles()
+    {
+      MultiComparer comparer = new MultiComparer(SortingTasks.ToArray());    
+     
+      List<File> newFiles = files.ToList();
+
+      newFiles.Sort(comparer);
+
+      Files = new TrulyObservableCollection<File>(newFiles);
+    }
 
     private void renamingTasksChanged()
     {

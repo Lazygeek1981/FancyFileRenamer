@@ -27,12 +27,12 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
         datei.NewFilename = datei.NewFilename.Replace(SearchFor, ReplaceWith);
     }
 
-    public string Description
+    public override string Description
     {
       get { return String.Format("REPLACE: {0} -> {1}", (SearchFor != String.Empty ? SearchFor : "<empty>"), (ReplaceWith != String.Empty ? ReplaceWith : "<empty>")); }
     }
 
-    public string NameInTaskSelectionList
+    public override string NameInTaskSelectionList
     {
       get { return "Replace values"; }
     }

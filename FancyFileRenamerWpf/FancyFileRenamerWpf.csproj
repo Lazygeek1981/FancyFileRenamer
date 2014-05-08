@@ -93,6 +93,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DateTimeToStringConverter.cs" />
     <Compile Include="TaskEditControlFactory.cs" />
     <Compile Include="TaskEditControl\ClearEntireFilenameTaskEditControl.xaml.cs">
       <DependentUpon>ClearEntireFilenameTaskEditControl.xaml</DependentUpon>
