@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
@@ -24,7 +25,8 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
     public void ApplyOn(File datei)
     {
       if (SearchFor.IsFilled())
-        datei.NewFilename = datei.NewFilename.Replace(SearchFor, ReplaceWith);
+        datei.NewFilename = Path.GetFileNameWithoutExtension(datei.NewFilename).Replace(SearchFor, ReplaceWith) + Path.GetExtension(datei.NewFilename);
+        //datei.NewFilename = datei.NewFilename.Replace(SearchFor, ReplaceWith);
     }
 
     public override string Description

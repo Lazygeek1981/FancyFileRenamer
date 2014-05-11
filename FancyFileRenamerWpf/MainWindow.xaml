@@ -64,7 +64,7 @@
             </DataTemplate>
           </ComboBox.ItemTemplate>
         </ComboBox>
-        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" Name="renamingTasks" SelectionChanged="renamingTasks_SelectionChanged" ItemsSource="{Binding CurrentTasks}" MouseDoubleClick="renamingTasks_MouseDoubleClick">
+        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="5" Name="renamingTasks" SelectionChanged="renamingTasks_SelectionChanged" ItemsSource="{Binding CurrentRenamingTasks}" MouseDoubleClick="renamingTasks_MouseDoubleClick">
           <ListBox.ItemTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal">
