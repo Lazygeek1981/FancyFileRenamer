@@ -44,13 +44,11 @@ namespace FancyFileRenamerWpf
 
       loadAvailableTasks();
 
-
       CurrentRenamingTasks = new TrulyObservableCollection<IRenamingTask>();
       CurrentSortingTasks = new TrulyObservableCollection<ISortingTask>();
 
 #if DEBUG
       createDebugDummyData();
-
 #endif
 
       listSourceScrollViewer = GetDescendantByType(listSource, typeof(ScrollViewer)) as ScrollViewer;
@@ -80,7 +78,7 @@ namespace FancyFileRenamerWpf
       AllAvailableSortingTasks.Add(new FilenameSorting());
       AllAvailableSortingTasks.Add(new SizeSorting());
       AllAvailableSortingTasks.Add(new CreationDateSorting());
-      //AllAvailableSortingTasks.Add(new ExifDateSorting());
+      AllAvailableSortingTasks.Add(new ExifDateSorting());
     }
 
     private Visual GetDescendantByType(Visual element, Type type)
