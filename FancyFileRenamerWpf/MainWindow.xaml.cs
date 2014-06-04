@@ -44,13 +44,11 @@ namespace FancyFileRenamerWpf
 
       loadAvailableTasks();
 
-
       CurrentRenamingTasks = new TrulyObservableCollection<IRenamingTask>();
       CurrentSortingTasks = new TrulyObservableCollection<ISortingTask>();
 
 #if DEBUG
       createDebugDummyData();
-
 #endif
 
       listSourceScrollViewer = GetDescendantByType(listSource, typeof(ScrollViewer)) as ScrollViewer;
