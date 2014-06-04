@@ -14,11 +14,10 @@ namespace FancyFileRenamer.TaskLibrary
     private FileInfo fileinfo;
     private string newFilename;
 
-
-
     public File(string filepath)
     {
       fileinfo = new FileInfo(filepath);
+      ExifTagValues = new Dictionary<ExifLib.ExifTags, string>();
 
       checkForImageFile();
 
@@ -26,23 +25,11 @@ namespace FancyFileRenamer.TaskLibrary
       Filename = Path.GetFileName(filepath);
       newFilename = Filename;
       IsValid = true;
+      
+
     }
 
-    private void checkForImageFile()
-    {
-      if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))
-      {
-        using (ExifReader reader = new ExifReader(fileinfo.FullName))
-        {
-          DateTime date;
-
-          if (reader.GetTagValue<DateTime>(ExifTags.DateTime, out date))
-          {
-            ExifPhotoCreationDate = date;
-          }
-        }
-      }
-    }
+    public bool IsValid { get; set; }
 
     public File Self { get { return this; } }
 
@@ -50,7 +37,40 @@ namespace FancyFileRenamer.TaskLibrary
 
     public string Filename { get; private set; }
 
+    public Dictionary<ExifTags, string> ExifTagValues { get; set; }
+
+    public bool HasExifTags { get; set; }
+
     public string NewFilename { get { return newFilename; } set { newFilename = value; OnPropertyChanged(); } }
+
+    public DateTime CreationDate { get { return fileinfo.CreationTime; } }
+
+    public DateTime LastWriteDate { get { return fileinfo.LastWriteTime; } }
+
+
+    private void checkForImageFile()
+    {
+      if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))
+      {
+        using (ExifReader reader = new ExifReader(fileinfo.FullName))
+        {
+          foreach (var value in Enum.GetValues(typeof(ExifLib.ExifTags)))
+          {
+            object result = null;
+
+            if (reader.GetTagValue<object>((ExifTags)value, out result))
+            {
+              ExifTagValues.Add((ExifTags)value, result.ToString());
+            }
+            else
+              ExifTagValues.Add((ExifTags)value, String.Empty);
+          }
+        }
+        HasExifTags = true;
+      }
+      else
+        HasExifTags = false;
+    }
 
     public long? Size
     {
@@ -62,12 +82,6 @@ namespace FancyFileRenamer.TaskLibrary
           return null;
       }
     }
-
-    public DateTime CreationDate { get { return fileinfo.CreationTime; } }
-
-    public DateTime LastWriteDate { get { return fileinfo.LastWriteTime; } }
-
-    public DateTime? ExifPhotoCreationDate { get; set; }
 
     public void DoRename()
     {
@@ -81,8 +95,6 @@ namespace FancyFileRenamer.TaskLibrary
       }
     }
 
-    public bool IsValid { get; set; }
-
     public event PropertyChangedEventHandler PropertyChanged;
 
     public void OnPropertyChanged()
@@ -93,7 +105,7 @@ namespace FancyFileRenamer.TaskLibrary
 
     public override string ToString()
     {
-      return "File: " + Filename + " --> " + NewFilename;
+      return String.Format("File: <{0}> --> <{1}>", Filename, NewFilename);
     }
   }
 }

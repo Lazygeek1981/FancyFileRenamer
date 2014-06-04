@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractTask.cs" />
+    <Compile Include="ExifTagToType.cs" />
     <Compile Include="File.cs" />
     <Compile Include="ITask.cs" />
     <Compile Include="ITaskEditControl.cs" />

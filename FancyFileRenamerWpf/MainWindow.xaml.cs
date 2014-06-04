@@ -80,7 +80,7 @@ namespace FancyFileRenamerWpf
       AllAvailableSortingTasks.Add(new FilenameSorting());
       AllAvailableSortingTasks.Add(new SizeSorting());
       AllAvailableSortingTasks.Add(new CreationDateSorting());
-      //AllAvailableSortingTasks.Add(new ExifDateSorting());
+      AllAvailableSortingTasks.Add(new ExifDateSorting());
     }
 
     private Visual GetDescendantByType(Visual element, Type type)
@@ -152,16 +152,16 @@ namespace FancyFileRenamerWpf
 
     private void renamingTasks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-      editTask();
+      editRenamingTask();
     }
 
     private void buttonRenamingTaskEdit_Click(object sender, RoutedEventArgs e)
     {
-      editTask();
+      editRenamingTask();
     }
 
 
-    private void editTask()
+    private void editRenamingTask()
     {
       if (renamingTasks.SelectedItems != null && renamingTasks.SelectedItems.Count > 0)
       {
@@ -194,7 +194,28 @@ namespace FancyFileRenamerWpf
 
     private void buttonSortingTaskEdit_Click(object sender, RoutedEventArgs e)
     {
+      editSortingTask();
+    }
 
+    private void editSortingTask()
+    {
+      if (sortingTasks.SelectedItems != null && sortingTasks.SelectedItems.Count > 0)
+      {
+        ITask selectedTask = sortingTasks.SelectedItems[0].As<ITask>();
+
+        ITaskEditControl editControl = TaskEditControlFactory.GetControlForTask(selectedTask);
+
+        if (editControl != null)
+        {
+          bool? result = editControl.As<Window>().ShowDialog();
+
+          if (result.HasValue && result.Value)
+          {
+            refreshFileListsWithSorting();
+            sortingTasks.UpdateLayout();
+          }
+        }
+      }
     }
 
     private void buttonSortingTaskAdd_Click(object sender, RoutedEventArgs e)

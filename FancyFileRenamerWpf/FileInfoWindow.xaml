@@ -1,0 +1,18 @@
+﻿<Window x:Class="FancyFileRenamerWpf.FileInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FileInfoWindow" Height="300" Width="300">
+    <Grid>
+    <ListView ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=CurrentEntries}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding Key}" />
+            <Label Content="{Binding Value }" />
+          </StackPanel>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+    </Grid>
+</Window>

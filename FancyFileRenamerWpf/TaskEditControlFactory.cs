@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FancyFileRenamer.TaskLibrary;
 using FancyFileRenamer.TaskLibrary.RenamingTasks;
+using FancyFileRenamer.TaskLibrary.SortingTasks;
 using FancyFileRenamerWpf.TaskEditControl;
 
 namespace FancyFileRenamerWpf
@@ -23,6 +24,8 @@ namespace FancyFileRenamerWpf
         editControl = new ClearEntireFilenameTaskEditControl();
       else if (task is InsertTask)
         editControl = new InsertTaskEditControl();
+      else if (task is ExifDateSorting)
+        editControl = new ExifSortingTaskEditControl();
       else
         throw new InvalidOperationException("Can't find edit control for task");
 

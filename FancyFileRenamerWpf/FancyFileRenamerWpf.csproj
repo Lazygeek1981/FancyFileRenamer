@@ -107,9 +107,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="FileInfoWindow.xaml.cs">
+      <DependentUpon>FileInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskEditControlFactory.cs" />
     <Compile Include="TaskEditControl\ClearEntireFilenameTaskEditControl.xaml.cs">
       <DependentUpon>ClearEntireFilenameTaskEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskEditControl\ExifSortingTaskEditControl.xaml.cs">
+      <DependentUpon>ExifSortingTaskEditControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="TaskEditControl\InsertTaskEditControl.xaml.cs">
       <DependentUpon>InsertTaskEditControl.xaml</DependentUpon>
@@ -120,6 +126,10 @@
     <Compile Include="TaskEditControl\ReplaceTaskEditControl.xaml.cs">
       <DependentUpon>ReplaceTaskEditControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="FileInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -139,6 +149,10 @@
     <Page Include="TaskEditControl\ClearEntireFilenameTaskEditControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskEditControl\ExifSortingTaskEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TaskEditControl\InsertTaskEditControl.xaml">
       <Generator>MSBuild:Compile</Generator>
