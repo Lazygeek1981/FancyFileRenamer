@@ -13,7 +13,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="sketch_grab-the-source-code.svg">
   <defs
      id="defs4" />
@@ -25,13 +25,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="526.01142"
-     inkscape:cy="600.44989"
+     inkscape:cx="428.86856"
+     inkscape:cy="593.30703"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1108"
+     inkscape:window-width="1280"
+     inkscape:window-height="778"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -54,19 +54,22 @@
     <text
        xml:space="preserve"
        style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="-91.174042"
-       y="556.34308"
+       x="10.782539"
+       y="548.06018"
        id="text2985"
        sodipodi:linespacing="125%"
-       transform="matrix(0.92557763,-0.37855787,0.37855787,0.92557763,0,0)"><tspan
+       transform="matrix(0.97854329,-0.20604131,0.20604131,0.97854329,0,0)"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-grab_entire_source_code.png"
+       inkscape:export-xdpi="99.548027"
+       inkscape:export-ydpi="99.548027"><tspan
          sodipodi:role="line"
          id="tspan2987"
-         x="-91.174042"
-         y="556.34308"
+         x="10.782539"
+         y="548.06018"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">Grab the entire</tspan><tspan
          sodipodi:role="line"
-         x="-91.174042"
-         y="588.84308"
+         x="10.782539"
+         y="580.56018"
          id="tspan2989"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">project source code</tspan></text>
     <path
@@ -74,12 +77,18 @@
        d="m 210.71429,477.36218 c 0,0 -73.57143,0 -61.42858,-56.42857 12.14286,-56.42857 60,-75.71429 60,-75.71429"
        id="path2991"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csc" />
+       sodipodi:nodetypes="csc"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_left.png"
+       inkscape:export-xdpi="100.12512"
+       inkscape:export-ydpi="100.12512" />
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 191.69642,344.50504 c 10.26786,-6.33929 21.69643,-6.875 22.76786,-6.07143 1.07143,0.80357 -3.125,17.58928 -5.89286,20.17857"
        id="path2993"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_left.png"
+       inkscape:export-xdpi="100.12512"
+       inkscape:export-ydpi="100.12512" />
     <text
        xml:space="preserve"
        style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
@@ -87,7 +96,10 @@
        y="429.74081"
        id="text2985-1"
        sodipodi:linespacing="125%"
-       transform="matrix(0.99065143,0.13641756,-0.13641756,0.99065143,0,0)"><tspan
+       transform="matrix(0.99065143,0.13641756,-0.13641756,0.99065143,0,0)"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting_get_windows_installer.png"
+       inkscape:export-xdpi="99.891716"
+       inkscape:export-ydpi="99.891716"><tspan
          sodipodi:role="line"
          x="555.94977"
          y="429.74081"
@@ -103,11 +115,17 @@
        d="M 639.47293,488.00212 C 684.4704,418.13756 717.11749,327.38221 629.06082,360.15264"
        id="path2991-0"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_right.png"
+       inkscape:export-xdpi="99.946953"
+       inkscape:export-ydpi="99.946953" />
     <path
        style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 641.01895,367.32811 c -11.98809,1.37885 -22.56244,-2.98949 -23.1912,-4.172 -0.62878,-1.18252 10.29881,-14.59737 13.90428,-15.76616"
        id="path2993-9"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_right.png"
+       inkscape:export-xdpi="99.946953"
+       inkscape:export-ydpi="99.946953" />
   </g>
 </svg>
