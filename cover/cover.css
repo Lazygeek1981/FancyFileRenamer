@@ -24,6 +24,22 @@ a:hover {
  * Base structure
  */
 
+ #forkme_banner {
+  display: block;
+  position: absolute;
+  top:0;
+  right: 10px;
+  z-index: 10;
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  background: url('img/blacktocat.png') #ff00ff no-repeat 95% 50%;
+  font-weight: 700;
+  text-shadow: none;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+ 
+ 
 html,
 body {
   background-color: #333;
@@ -149,6 +165,23 @@ body {
   color: rgba(255,255,255,.5);
 }
 
+.download_msi {
+ width: 168px;
+ height: 177px;
+ background: url('img/download_msi.png') no-repeat top left;
+ 
+}
+
+.change_img { 
+
+width: 168px;
+height: 177px;
+background-image:url('img/download_msi.png'); }/*Normal Image*/
+.change_img:hover { background-image:url('img/download_msi_active.png'); }/*On MouseOver*/
+
+.download_zip {
+
+}
 
 /*
  * Affix and center
