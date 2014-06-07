@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="744.09448819"
@@ -16,25 +17,110 @@
    inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="sketch_grab-the-source-code.svg">
   <defs
-     id="defs4" />
+     id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4015-9"
+       id="linearGradient4286"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(170.11966,-27.345127)"
+       x1="1991.5714"
+       y1="248.10269"
+       x2="1991.5714"
+       y2="203.15088" />
+    <linearGradient
+       id="linearGradient4015-9">
+      <stop
+         id="stop4017-8"
+         offset="0"
+         style="stop-color:#ff00ff;stop-opacity:1;" />
+      <stop
+         id="stop4019-2"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4015-9"
+       id="linearGradient4232"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(63.691082,-27.345127)"
+       x1="1991.5714"
+       y1="248.10269"
+       x2="1991.5714"
+       y2="203.15088" />
+    <linearGradient
+       id="linearGradient4331">
+      <stop
+         id="stop4333"
+         offset="0"
+         style="stop-color:#ff00ff;stop-opacity:1;" />
+      <stop
+         id="stop4335"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4015-6"
+       id="linearGradient4094-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(63.788557,-112.36477)"
+       x1="1991.5714"
+       y1="248.10269"
+       x2="1991.5714"
+       y2="203.15088" />
+    <linearGradient
+       id="linearGradient4015-6">
+      <stop
+         id="stop4017-2"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         id="stop4019-4"
+         offset="1"
+         style="stop-color:#525252;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4015"
+       id="linearGradient4094"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(63.788557,-112.36477)"
+       x1="1991.5714"
+       y1="248.10269"
+       x2="1991.5714"
+       y2="203.15088" />
+    <linearGradient
+       id="linearGradient4015">
+      <stop
+         id="stop4017"
+         offset="0"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+      <stop
+         id="stop4019"
+         offset="1"
+         style="stop-color:#525252;stop-opacity:1" />
+    </linearGradient>
+  </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#333333"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="428.86856"
-     inkscape:cy="593.30703"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="620.31657"
+     inkscape:cy="577.6181"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
      inkscape:window-height="778"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -53,7 +139,7 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
        x="10.782539"
        y="548.06018"
        id="text2985"
@@ -66,32 +152,32 @@
          id="tspan2987"
          x="10.782539"
          y="548.06018"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">Grab the entire</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff00ff;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">Grab the entire</tspan><tspan
          sodipodi:role="line"
          x="10.782539"
          y="580.56018"
          id="tspan2989"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">project source code</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff00ff;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">project source code</tspan></text>
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 210.71429,477.36218 c 0,0 -73.57143,0 -61.42858,-56.42857 12.14286,-56.42857 60,-75.71429 60,-75.71429"
+       style="fill:none;stroke:#ff00ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 210.71429,477.36218 c 0,0 -53.36838,-15.15229 -41.22553,-71.58086 12.14286,-56.42857 39.79695,-60.562 39.79695,-60.562"
        id="path2991"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csc"
-       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_left.png"
-       inkscape:export-xdpi="100.12512"
-       inkscape:export-ydpi="100.12512" />
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_zip_active.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#ff00ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 191.69642,344.50504 c 10.26786,-6.33929 21.69643,-6.875 22.76786,-6.07143 1.07143,0.80357 -3.125,17.58928 -5.89286,20.17857"
        id="path2993"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_left.png"
-       inkscape:export-xdpi="100.12512"
-       inkscape:export-ydpi="100.12512" />
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_zip_active.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99" />
     <text
        xml:space="preserve"
-       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff00ff;fill-opacity:1;stroke:none;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
        x="555.94977"
        y="429.74081"
        id="text2985-1"
@@ -104,28 +190,151 @@
          x="555.94977"
          y="429.74081"
          id="tspan2989-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">Get the latest</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff00ff;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print">Get the latest</tspan><tspan
          sodipodi:role="line"
          x="555.94977"
          y="462.24081"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff0000;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ff00ff;font-family:SketchFlow Print;-inkscape-font-specification:SketchFlow Print"
          id="tspan3021">windows installer</tspan></text>
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#ff00ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 639.47293,488.00212 C 684.4704,418.13756 717.11749,327.38221 629.06082,360.15264"
        id="path2991-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_right.png"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_msi_active.png"
        inkscape:export-xdpi="99.946953"
        inkscape:export-ydpi="99.946953" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#ff00ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 641.01895,367.32811 c -11.98809,1.37885 -22.56244,-2.98949 -23.1912,-4.172 -0.62878,-1.18252 10.29881,-14.59737 13.90428,-15.76616"
        id="path2993-9"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\handwriting-arrow_right.png"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_msi_active.png"
        inkscape:export-xdpi="99.946953"
        inkscape:export-ydpi="99.946953" />
+    <g
+       transform="translate(-1480,254)"
+       id="g4096"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_msi_active.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99">
+      <path
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:connector-curvature="0"
+         id="path3977"
+         d="m 2014.5029,75.354545 20.7143,-0.53571 5.5357,6.42857 46.25,0.53572 0.8482,9.0625 4.2411,1.5625 -6.1161,36.562495 -2.0089,12.63393 -70.3572,-0.35714 z"
+         style="fill:url(#linearGradient4094);fill-opacity:1;stroke:none" />
+      <path
+         sodipodi:nodetypes="cssscccscsccccccscssccccsccscccsscscscc"
+         inkscape:connector-curvature="0"
+         id="path3177"
+         d="m 2014.2225,142.62334 c -2.2197,-1.55476 -2.2225,-1.59763 -2.2225,-34.29999 0,-24.133685 0.3155,-33.058835 1.2,-33.943305 0.7914,-0.79136 5.0378,-1.2 12.4701,-1.2 l 11.27,0 2.218,3 2.218,3 21.8777,0 c 13.1685,0 22.6477,0.41209 23.812,1.03518 1.3919,0.74497 1.9342,2.10174 1.9342,4.83949 0,3.0875 0.4711,4.01892 2.5,4.94338 3.2005,1.45822 3.206,3.48627 0.054,19.925415 -1.3451,7.0161 -3.1933,16.92734 -4.1073,22.02497 -1.2768,7.12185 -2.1516,9.61156 -3.7769,10.75 -3.2327,2.26429 -66.205,2.19615 -69.4477,-0.0751 z m 72.6493,-25.4485 c 2.3319,-12.65286 3.9632,-23.452855 3.625,-23.999995 -0.9754,-1.5783 -64.9816,-1.33176 -66.2546,0.2552 -0.5515,0.6875 -2.6678,10.474995 -4.703,21.749995 -2.0351,11.275 -3.9378,21.5125 -4.2281,22.75 l -0.5279,2.25 33.9244,0 33.9243,0 z m -68.8504,-11.9948 c 1.2274,-6.989265 2.877,-13.271495 3.7418,-14.249995 1.4112,-1.59655 4.2953,-1.75 32.8918,-1.75 l 31.345,0 0,-3 0,-3 -21.4349,0 c -11.7892,0 -22.4862,-0.39972 -23.7712,-0.88827 -1.285,-0.48855 -2.9733,-2.07836 -3.7517,-3.53292 -1.4037,-2.62291 -1.4981,-2.64233 -11.4788,-2.36173 l -10.0634,0.28292 -0.2708,20.93753 c -0.149,11.515625 -0.075,20.740635 0.1631,20.500005 0.2388,-0.24065 1.4219,-6.06254 2.6291,-12.93754 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4027"
+         y="136.38757"
+         x="2043.1836"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           y="136.38757"
+           x="2043.1836"
+           id="tspan4029"
+           sodipodi:role="line">.msi</tspan></text>
+    </g>
+    <g
+       transform="translate(-1785,206)"
+       id="g4096-5"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_zip.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99">
+      <path
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:connector-curvature="0"
+         id="path3977-8"
+         d="m 2014.5029,75.354545 20.7143,-0.53571 5.5357,6.42857 46.25,0.53572 0.8482,9.0625 4.2411,1.5625 -6.1161,36.562495 -2.0089,12.63393 -70.3572,-0.35714 z"
+         style="fill:url(#linearGradient4094-3);fill-opacity:1;stroke:none" />
+      <path
+         sodipodi:nodetypes="cssscccscsccccccscssccccsccscccsscscscc"
+         inkscape:connector-curvature="0"
+         id="path3177-8"
+         d="m 2014.2225,142.62334 c -2.2197,-1.55476 -2.2225,-1.59763 -2.2225,-34.29999 0,-24.133685 0.3155,-33.058835 1.2,-33.943305 0.7914,-0.79136 5.0378,-1.2 12.4701,-1.2 l 11.27,0 2.218,3 2.218,3 21.8777,0 c 13.1685,0 22.6477,0.41209 23.812,1.03518 1.3919,0.74497 1.9342,2.10174 1.9342,4.83949 0,3.0875 0.4711,4.01892 2.5,4.94338 3.2005,1.45822 3.206,3.48627 0.054,19.925415 -1.3451,7.0161 -3.1933,16.92734 -4.1073,22.02497 -1.2768,7.12185 -2.1516,9.61156 -3.7769,10.75 -3.2327,2.26429 -66.205,2.19615 -69.4477,-0.0751 z m 72.6493,-25.4485 c 2.3319,-12.65286 3.9632,-23.452855 3.625,-23.999995 -0.9754,-1.5783 -64.9816,-1.33176 -66.2546,0.2552 -0.5515,0.6875 -2.6678,10.474995 -4.703,21.749995 -2.0351,11.275 -3.9378,21.5125 -4.2281,22.75 l -0.5279,2.25 33.9244,0 33.9243,0 z m -68.8504,-11.9948 c 1.2274,-6.989265 2.877,-13.271495 3.7418,-14.249995 1.4112,-1.59655 4.2953,-1.75 32.8918,-1.75 l 31.345,0 0,-3 0,-3 -21.4349,0 c -11.7892,0 -22.4862,-0.39972 -23.7712,-0.88827 -1.285,-0.48855 -2.9733,-2.07836 -3.7517,-3.53292 -1.4037,-2.62291 -1.4981,-2.64233 -11.4788,-2.36173 l -10.0634,0.28292 -0.2708,20.93753 c -0.149,11.515625 -0.075,20.740635 0.1631,20.500005 0.2388,-0.24065 1.4219,-6.06254 2.6291,-12.93754 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4027-1"
+         y="136.38757"
+         x="2049.1836"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           y="136.38757"
+           x="2049.1836"
+           id="tspan4029-2"
+           sodipodi:role="line">.zip</tspan></text>
+    </g>
+    <g
+       transform="translate(-1479.9025,168.98036)"
+       id="g4309"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_msi_active.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99">
+      <g
+         id="g4234">
+        <path
+           style="fill:url(#linearGradient4232);fill-opacity:1;stroke:none"
+           d="m 2014.4054,160.37419 20.7143,-0.53571 5.5357,6.42857 46.25,0.53572 0.8482,9.0625 4.2411,1.5625 -6.1161,36.56249 -2.0089,12.63393 -70.3572,-0.35714 z"
+           id="path3977-5"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccc" />
+        <path
+           style="fill:#ff00ff;fill-opacity:1;stroke:none"
+           d="m 2014.125,227.64298 c -2.2197,-1.55476 -2.2225,-1.59763 -2.2225,-34.29999 0,-24.13368 0.3155,-33.05883 1.2,-33.9433 0.7914,-0.79136 5.0378,-1.2 12.4701,-1.2 l 11.27,0 2.218,3 2.218,3 21.8777,0 c 13.1685,0 22.6477,0.41209 23.812,1.03518 1.3919,0.74497 1.9342,2.10174 1.9342,4.83949 0,3.0875 0.4711,4.01892 2.5,4.94338 3.2005,1.45822 3.206,3.48627 0.054,19.92541 -1.3451,7.0161 -3.1933,16.92734 -4.1073,22.02497 -1.2768,7.12185 -2.1516,9.61156 -3.7769,10.75 -3.2327,2.26429 -66.205,2.19615 -69.4477,-0.0751 z m 72.6493,-25.4485 c 2.3319,-12.65286 3.9632,-23.45285 3.625,-23.99999 -0.9754,-1.5783 -64.9816,-1.33176 -66.2546,0.2552 -0.5515,0.6875 -2.6678,10.47499 -4.703,21.74999 -2.0351,11.275 -3.9378,21.5125 -4.2281,22.75 l -0.5279,2.25 33.9244,0 33.9243,0 z m -68.8504,-11.9948 c 1.2274,-6.98926 2.877,-13.27149 3.7418,-14.24999 1.4112,-1.59655 4.2953,-1.75 32.8918,-1.75 l 31.345,0 0,-3 0,-3 -21.4349,0 c -11.7892,0 -22.4862,-0.39972 -23.7712,-0.88827 -1.285,-0.48855 -2.9733,-2.07836 -3.7517,-3.53292 -1.4037,-2.62291 -1.4981,-2.64233 -11.4788,-2.36173 l -10.0634,0.28292 -0.2708,20.93753 c -0.149,11.51562 -0.075,20.74063 0.1631,20.5 0.2388,-0.24065 1.4219,-6.06254 2.6291,-12.93754 z"
+           id="path3177-2"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cssscccscsccccccscssccccsccscccsscscscc" />
+        <text
+           xml:space="preserve"
+           style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+           x="2043.0861"
+           y="221.40721"
+           id="text4027-9"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4029-9"
+             x="2043.0861"
+             y="221.40721">.msi</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(-1891.3311,120.98036)"
+       id="g4303"
+       inkscape:export-filename="C:\WebEntwicklung\www\FancyFileRenamer-GitHubPages\cover\img\download_zip_active.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99">
+      <path
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:connector-curvature="0"
+         id="path3977-8-8"
+         d="m 2120.834,160.37419 20.7143,-0.53571 5.5357,6.42857 46.25,0.53572 0.8482,9.0625 4.2411,1.5625 -6.1161,36.56249 -2.0089,12.63393 -70.3572,-0.35714 z"
+         style="fill:url(#linearGradient4286);fill-opacity:1;stroke:none" />
+      <path
+         sodipodi:nodetypes="cssscccscsccccccscssccccsccscccsscscscc"
+         inkscape:connector-curvature="0"
+         id="path3177-8-6"
+         d="m 2120.5536,227.64298 c -2.2197,-1.55476 -2.2225,-1.59763 -2.2225,-34.29999 0,-24.13368 0.3155,-33.05883 1.2,-33.9433 0.7914,-0.79136 5.0378,-1.2 12.4701,-1.2 l 11.27,0 2.218,3 2.218,3 21.8777,0 c 13.1685,0 22.6477,0.41209 23.812,1.03518 1.3919,0.74497 1.9342,2.10174 1.9342,4.83949 0,3.0875 0.4711,4.01892 2.5,4.94338 3.2005,1.45822 3.206,3.48627 0.054,19.92541 -1.3451,7.0161 -3.1933,16.92734 -4.1073,22.02497 -1.2768,7.12185 -2.1516,9.61156 -3.7769,10.75 -3.2327,2.26429 -66.205,2.19615 -69.4477,-0.0751 z m 72.6493,-25.4485 c 2.3319,-12.65286 3.9632,-23.45285 3.625,-23.99999 -0.9754,-1.5783 -64.9816,-1.33176 -66.2546,0.2552 -0.5515,0.6875 -2.6678,10.47499 -4.703,21.74999 -2.0351,11.275 -3.9378,21.5125 -4.2281,22.75 l -0.5279,2.25 33.9244,0 33.9243,0 z m -68.8504,-11.9948 c 1.2274,-6.98926 2.877,-13.27149 3.7418,-14.24999 1.4112,-1.59655 4.2953,-1.75 32.8918,-1.75 l 31.345,0 0,-3 0,-3 -21.4349,0 c -11.7892,0 -22.4862,-0.39972 -23.7712,-0.88827 -1.285,-0.48855 -2.9733,-2.07836 -3.7517,-3.53292 -1.4037,-2.62291 -1.4981,-2.64233 -11.4788,-2.36173 l -10.0634,0.28292 -0.2708,20.93753 c -0.149,11.51562 -0.075,20.74063 0.1631,20.5 0.2388,-0.24065 1.4219,-6.06254 2.6291,-12.93754 z"
+         style="fill:#ff00ff;fill-opacity:1;stroke:none" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text4027-1-6"
+         y="221.40721"
+         x="2155.5146"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         xml:space="preserve"><tspan
+           y="221.40721"
+           x="2155.5146"
+           id="tspan4029-2-2"
+           sodipodi:role="line">.zip</tspan></text>
+    </g>
   </g>
 </svg>
