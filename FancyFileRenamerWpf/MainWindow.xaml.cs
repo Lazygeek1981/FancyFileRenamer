@@ -224,7 +224,7 @@ namespace FancyFileRenamerWpf
       CurrentSortingTasks.Add(task);
       Project.SortingTasks.Add(task);
 
-      comboTasks.SelectedIndex = 0;
+      comboSortingTasks.SelectedIndex = 0;
 
       refreshFileListsWithSorting();
     }

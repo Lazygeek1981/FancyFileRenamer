@@ -41,10 +41,10 @@ namespace FancyFileRenamerWpf.Converters
       icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.InsertTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_insert.png"), UriKind.Absolute)));
 
       //TODO
-      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.FilenameSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
-      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.SizeSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
-      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.CreationDateSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
-      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.ExifDateSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_rename.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.FilenameSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/sort_filename.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.SizeSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/sort_filesize.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.CreationDateSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/sort_date.png"), UriKind.Absolute)));
+      icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.ExifDateSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/sort_exif.png"), UriKind.Absolute)));
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
