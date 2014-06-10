@@ -1,63 +1,146 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Fancy File Renamer : A fancy little tool for renaming a bunch of files at once" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Fancy File Renamer</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Lazygeek1981/FancyFileRenamer">View on GitHub</a>
-
-          <h1 id="project_title">Fancy File Renamer</h1>
-          <h2 id="project_tagline">A fancy little tool for renaming a bunch of files at once</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/Lazygeek1981/FancyFileRenamer/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/Lazygeek1981/FancyFileRenamer/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-fancy-file-renamer" class="anchor" href="#welcome-to-fancy-file-renamer"><span class="octicon octicon-link"></span></a>Welcome to Fancy File Renamer</h3>
-
-<p>Ever needed to rename a lot of files all at once? This program can do the work for you. It allows you to replace, enumerate, insert text to a bunch of files. Before starting to rename you can preview your changes. You can even sort the files before renaming.</p>
-
-
-	  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="62H5BXJLHE6N4">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-	  </section>
-    </div>
-
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link type="image/x-icon" href="favicon.ico" />
+		
+		<script type='text/javascript' src="http://imsky.github.io/holder/holder.js"></script>
+		<title>Fancy File Renamer</title>
 	
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 	
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Fancy File Renamer maintained by <a href="https://github.com/Lazygeek1981">Lazygeek1981</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+		<!-- Custom styles for this template -->
+		<link href="cover.css" rel="stylesheet">
+	
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="js/ie-emulation-modes-warning.js"></script>
+	
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
 
-    
+	<body>
+		<script type="text/javascript" language="javascript">
+				function changeImage(img){
+					document.getElementById('bigImage').src=img;
+				}
+		</script>
+	
+		<div class="site-wrapper">	
+			<div class="site-wrapper-inner">
+				<div class="cover-container">
+					<div class="inner cover">
+						<a id="forkme_banner" target="_new" href="https://github.com/Lazygeek1981/FancyFileRenamer">View on GitHub</a>
+						
+						<div class="row row-height">
+							<div class="col-xs-4"><img src="img/fancyfilerenamer_icon_128x128.png" /></div>
+							<div class="col-xs-8"><h1 class="cover-heading h1-times">Fancy File Renamer</h1></div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<h2 class="featurette-heading">A fancy little tool to rename a bunch of files all at once<br />
+								<span class="text-muted">freeware and open source</span></h2>
+							</div>
+						</div>
+					</div>
+	
+					<div class="row featurette">
+						<div class="col-md-6">
+							<a href="https://github.com/Lazygeek1981/FancyFileRenamer/zipball/master">
+								<img src="img/download_zip.png" onmouseover="this.src='img/download_zip_active.png';" onmouseout="this.src='img/download_zip.png'" />
+							</a>
+							<br />
+							<img src="img/handwriting-grab_entire_source_code.png" />			
+						</div>
+						<div class="col-md-6">
+							<a href="fancyfilerenamer-latest.msi" >	
+								<img src="img/download_msi.png" onmouseover="this.src='img/download_msi_active.png';" onmouseout="this.src='img/download_msi.png'" />
+							</a>			  
+							<br />
+							<img src="img/handwriting_get_windows_installer.png" />
+						</div>		
+					</div>
 
+					<div class="row featurette">
+						<div class="col-md-7">
+							<h2 class="featurette-heading">Task based file renaming <span class="text-muted">Create and combine different tasks as needed</span></h2>
+							<p class="lead">You can do even the most complex renaming jobs by combining different renaming tasks. For instance use a replace task to replace some characters and than add an enumeration tasks and change the file extension all at once. The possibilities are endless</p>
+						</div>
+						<div class="col-md-5">
+							<img class="featurette-image img-responsive" src="img/feature01-renamingtasks.png" alt="Generic placeholder image">
+						</div>
+					</div>
+	
+					<div class="row featurette">
+						<div class="col-md-5">
+							<img class="featurette-image img-responsive" src="img/feature02-sortingtasks.png" alt="Generic placeholder image">
+						</div>
+						<div class="col-md-7">
+							<h2 class="featurette-heading">Sort files before renaming <span class="text-muted">Use various attributes - even EXIF Tags - for sorting</span></h2>
+							<p class="lead">If you want to change the order of the files before you rename them (e.g. if you added an enumeration task) 
+							you can choose from different sorting options. Sort files by their original name, size or even use their EXIF tags (if present). 
+							See the tutorial video for some examples how to use the sorting task.</p>
+						</div>
+					</div>
+					<div class="row featurette">
+						<div class="col-md-7">
+							<h2 class="featurette-heading">See a result preview before renaming <span class="text-muted">The preview is updated in real-time and even indicates if the new filenames are valid</span></h2>
+							<p class="lead">
+								All tasks (sorting and renaming) can be previewed in real-time. So you can check your results while 
+								you are adding or editing. The Fancy File Renamer will even check for duplicated file names or invalid file names. Those
+								will be highlighted with a red background colour while valid file name are printed on a green background. So you'll
+								get immediate feedback if all your changes are applicable.								
+							</p>
+						</div>
+						<div class="col-md-5">
+							<img class="featurette-image img-responsive" src="img/feature03-resultpreview.png" alt="Generic placeholder image">
+						</div>
+					</div>
+					
+					<div class="row featurette">
+						<div class="col-md-12">
+							<h2 class="featurette-heading">See it in action <span class="text-muted">Watch this tutorial video how the Fancy File Renamer works</span></h2>
+							<img src="img/video_placeholder_604x270.png" />
+						</div>
+					</div>
+					
+					<div class="row featurette">
+						<div class="col-md-12">
+							<h2 class="featurette-heading">Do like the Fancy File Renamer? Did it saved you a lot of time? Was it helpful?<br />
+							<span class="text-muted">Consider to make a donation</span></h2>
+							<p>
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="62H5BXJLHE6N4">
+									<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+								</form>
+							</p>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
   </body>
 </html>
