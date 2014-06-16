@@ -47,21 +47,21 @@ namespace FancyFileRenamerWpf
       CurrentRenamingTasks = new TrulyObservableCollection<IRenamingTask>();
       CurrentSortingTasks = new TrulyObservableCollection<ISortingTask>();
 
-#if DEBUG
-      createDebugDummyData();
-#endif
+//#if DEBUG
+//      createDebugDummyData();
+//#endif
 
       listSourceScrollViewer = GetDescendantByType(listSource, typeof(ScrollViewer)) as ScrollViewer;
       listResultScrollViewer = GetDescendantByType(listResult, typeof(ScrollViewer)) as ScrollViewer;
     }
 
-    private void createDebugDummyData()
-    {
-      for (int i = 0; i < 1000; i++)
-      {
-        Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("example" + (1000 - i).ToString("0000") + ".avi"));
-      }
-    }
+    //private void createDebugDummyData()
+    //{
+    //  for (int i = 0; i < 1000; i++)
+    //  {
+    //    Project.Files.Add(new FancyFileRenamer.TaskLibrary.File("example" + (1000 - i).ToString("0000") + ".avi"));
+    //  }
+    //}
 
     private void loadAvailableTasks()
     {
