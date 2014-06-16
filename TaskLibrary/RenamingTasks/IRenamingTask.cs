@@ -6,19 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FancyFileRenamer.RenamingTasks.TaskLibrary
+namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
-  public interface IRenamingTask
+  public interface IRenamingTask : ITask
   {
     void ApplyOn(File datei);
 
     IRenamingTask Self { get; }
 
     string Description { get; }
-
-    string ListName { get; }
-
-    Bitmap ListIcon { get; }
 
     IRenamingTask GetNewInstance();
 
