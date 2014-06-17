@@ -27,26 +27,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6E8962A4977C48689B9ECF0B80DE5F2B"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8F34C0CF4C0F4DAF9D11120550B1B8E0"
-        "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8F34C0CF4C0F4DAF9D11120550B1B8E0"
+        "MsmKey" = "8:_69EADFDB8E5B49A058A443AFCD0D9E25"
         "OwnerKey" = "8:_6E8962A4977C48689B9ECF0B80DE5F2B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8F34C0CF4C0F4DAF9D11120550B1B8E0"
+        "MsmKey" = "8:_69EADFDB8E5B49A058A443AFCD0D9E25"
         "OwnerKey" = "8:_B14161E242F7A4D320A4DFA13070DC5C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_69EADFDB8E5B49A058A443AFCD0D9E25"
+        "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6E8962A4977C48689B9ECF0B80DE5F2B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,7 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_B2E0646A09E615EFA8762758288695D2"
-        "OwnerKey" = "8:_CC2E237CA2DEF19327C2418F9A0E33E5"
+        "OwnerKey" = "8:_0F4FE9081E8C9E83434758BC00F707F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,18 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B2E0646A09E615EFA8762758288695D2"
-        "OwnerKey" = "8:_0F4FE9081E8C9E83434758BC00F707F5"
+        "OwnerKey" = "8:_CC2E237CA2DEF19327C2418F9A0E33E5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_CC2E237CA2DEF19327C2418F9A0E33E5"
-        "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DA62761A6838D74B4F9B0E2ED9CC72A4"
         "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -113,6 +107,12 @@
         {
         "MsmKey" = "8:_DA62761A6838D74B4F9B0E2ED9CC72A4"
         "OwnerKey" = "8:_B14161E242F7A4D320A4DFA13070DC5C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DA62761A6838D74B4F9B0E2ED9CC72A4"
+        "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,18 +136,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B2E0646A09E615EFA8762758288695D2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6E8962A4977C48689B9ECF0B80DE5F2B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_90FB1EC194BE4413989A73E08423CA11"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -155,18 +143,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B14161E242F7A4D320A4DFA13070DC5C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8F34C0CF4C0F4DAF9D11120550B1B8E0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DA62761A6838D74B4F9B0E2ED9CC72A4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -199,6 +175,30 @@
         "OwnerKey" = "8:_CC2E237CA2DEF19327C2418F9A0E33E5"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B2E0646A09E615EFA8762758288695D2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6E8962A4977C48689B9ECF0B80DE5F2B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DA62761A6838D74B4F9B0E2ED9CC72A4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_69EADFDB8E5B49A058A443AFCD0D9E25"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -217,13 +217,21 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\FancyFileRenamer.msi"
+        "OutputFilename" = "8:Release\\fancyfilerenamer-latest.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -233,6 +241,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -324,14 +348,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8F34C0CF4C0F4DAF9D11120550B1B8E0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_69EADFDB8E5B49A058A443AFCD0D9E25"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ExifLib, Version=1.5.0.0, Culture=neutral, PublicKeyToken=30284005913968db, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8F34C0CF4C0F4DAF9D11120550B1B8E0"
+                    "_69EADFDB8E5B49A058A443AFCD0D9E25"
                     {
                     "Name" = "8:ExifLib.dll"
                     "Attributes" = "3:512"
@@ -618,7 +642,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Fancy File Renamer"
         "ProductCode" = "8:{7F07840C-3948-4A42-BFA6-5E3DBEDFA3F8}"
-        "PackageCode" = "8:{7955BC6A-8ABC-46EA-9020-EBC69D3C456B}"
+        "PackageCode" = "8:{9F32D642-0C42-40FD-AF59-BE00C32D36DD}"
         "UpgradeCode" = "8:{7E133AD7-1F6B-4D63-8931-41CD66D2B6B8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
