@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CreateDummyFiles.cs" />
     <Compile Include="ExifTagTests.cs" />
     <Compile Include="FilenameSortingTests.cs" />
     <Compile Include="InsertTaskTests.cs" />
