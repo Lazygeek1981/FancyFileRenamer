@@ -55,6 +55,7 @@
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
     <Compile Include="RenamingTasks\ClearEntireFilenameTask.cs" />
     <Compile Include="RenamingTasks\EnumerateTask.cs" />
+    <Compile Include="RenamingTasks\InsertDateTask.cs" />
     <Compile Include="RenamingTasks\InsertTask.cs" />
     <Compile Include="RenamingTasks\ReplaceTask.cs" />
     <Compile Include="SortingTasks\CreationDateSorting.cs" />

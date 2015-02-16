@@ -28,7 +28,7 @@
       <Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="150,5">Start Renaming</Button>
     </StackPanel>
     <GroupBox Header="Source Files" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" Margin="5">
-      <ListView Name="listSource" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged">
+      <ListView Name="listSource" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged" SelectionChanged="listSource_SelectionChanged">
         <ListView.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal">

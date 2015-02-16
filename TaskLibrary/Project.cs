@@ -64,6 +64,9 @@ namespace FancyFileRenamer.TaskLibrary
 
       foreach (File file in Files)
       {
+				if (file.Bypass)
+					continue;
+
         file.NewFilename = file.Filename;
 
         foreach (IRenamingTask task in renamingTasks)
@@ -79,6 +82,9 @@ namespace FancyFileRenamer.TaskLibrary
 
       foreach (File file in Files)
       {
+				if (file.Bypass)
+					continue;
+
         try
         {
           sb.AppendLine(String.Format("{0} ----> {1}", file.Filename, file.NewFilename));
