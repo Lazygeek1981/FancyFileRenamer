@@ -294,5 +294,11 @@ namespace FancyFileRenamerWpf
 
       resultScrolling = false;
     }
+
+		private void listSource_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+
+
+		}
   }
 }

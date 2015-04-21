@@ -26,10 +26,17 @@ namespace FancyFileRenamer.TaskLibrary
 			newFilename = Filename;
 			IsValid = true;
 
+<<<<<<< HEAD
 			IsSelected = true;
 		}
 
 		public bool IsSelected { get; set; }
+=======
+			Bypass = false;
+		}
+
+		public bool Bypass { get; set; }
+>>>>>>> 888a79418c8a7ab10d86ccfe93c520141a7f7e25
 
 		public bool IsValid { get; set; }
 
@@ -80,7 +87,11 @@ namespace FancyFileRenamer.TaskLibrary
 			{
 				if (fileinfo != null && fileinfo.Exists)
 					return fileinfo.Length;
+<<<<<<< HEAD
 				else
+=======
+				else 
+>>>>>>> 888a79418c8a7ab10d86ccfe93c520141a7f7e25
 					return null;
 			}
 		}
