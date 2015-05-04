@@ -72,6 +72,7 @@ namespace FancyFileRenamerWpf
       AllAvailableRenamingTasks.Add(new ClearEntireFilenameTask());
       AllAvailableRenamingTasks.Add(new ChangeFileExtensionTask());
       AllAvailableRenamingTasks.Add(new InsertTask());
+			AllAvailableRenamingTasks.Add(new FilePropertyTask());
 
       AllAvailableSortingTasks = new ObservableCollection<ISortingTask>();
       AllAvailableSortingTasks.Add(null);

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FancyFileRenamer.TaskLibrary;
+using FancyFileRenamer.TaskLibrary.Enums;
 using FancyFileRenamer.TaskLibrary.SortingTasks;
 
 namespace FancyFileRenamerWpf.TaskEditControl
@@ -38,16 +39,16 @@ namespace FancyFileRenamerWpf.TaskEditControl
       { 
         default:
         case 0:
-          Task.SelectedDateTimeSortingTag = ExifDateSorting.ExifDateTimeSorting.DateTime;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTime;
           break;
         case 1:
-          Task.SelectedDateTimeSortingTag = ExifDateSorting.ExifDateTimeSorting.DateTimeDigitized;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTimeDigitized;
           break;
         case 2:
-          Task.SelectedDateTimeSortingTag = ExifDateSorting.ExifDateTimeSorting.DateTimeOriginal;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTimeOriginal;
           break;
         case 3:
-          Task.SelectedDateTimeSortingTag = ExifDateSorting.ExifDateTimeSorting.GPSTimestamp;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.GPSTimestamp;
           break;
       }
     }
@@ -63,16 +64,16 @@ namespace FancyFileRenamerWpf.TaskEditControl
 
       switch (Task.SelectedDateTimeSortingTag)
       { 
-        case ExifDateSorting.ExifDateTimeSorting.DateTime:
+        case ExifDateTimeSorting.DateTime:
           comboSortingDate.SelectedIndex = 0;
           break;
-        case ExifDateSorting.ExifDateTimeSorting.DateTimeDigitized:
+        case ExifDateTimeSorting.DateTimeDigitized:
           comboSortingDate.SelectedIndex = 1;
           break;
-        case ExifDateSorting.ExifDateTimeSorting.DateTimeOriginal:
+        case ExifDateTimeSorting.DateTimeOriginal:
           comboSortingDate.SelectedIndex = 2;
           break;
-        case ExifDateSorting.ExifDateTimeSorting.GPSTimestamp:
+        case ExifDateTimeSorting.GPSTimestamp:
           comboSortingDate.SelectedIndex = 3;
           break;
       }

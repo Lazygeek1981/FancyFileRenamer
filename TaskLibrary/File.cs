@@ -49,7 +49,6 @@ namespace FancyFileRenamer.TaskLibrary
 
 		public DateTime LastWriteDate { get { return fileinfo.LastWriteTime; } }
 
-
 		private void checkForImageFile()
 		{
 			if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))

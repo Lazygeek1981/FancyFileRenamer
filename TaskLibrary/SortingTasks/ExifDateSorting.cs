@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FancyFileRenamer.TaskLibrary.Enums;
 
 namespace FancyFileRenamer.TaskLibrary.SortingTasks
 {
@@ -83,7 +84,5 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
         return xDate.CompareTo(yDate);
       }
     }
-
-    public enum ExifDateTimeSorting { DateTime, DateTimeDigitized, DateTimeOriginal, GPSTimestamp, }
   }
 }

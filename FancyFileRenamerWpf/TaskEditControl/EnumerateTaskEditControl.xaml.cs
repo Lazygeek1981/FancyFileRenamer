@@ -32,8 +32,6 @@ namespace FancyFileRenamerWpf.TaskEditControl
       isLatched = false;
     }
 
-    #region ITaskEditControl Members
-
     public void UpdateTaskFromControl()
     {
       if (isLatched)
@@ -58,8 +56,6 @@ namespace FancyFileRenamerWpf.TaskEditControl
 
       isLatched = false;
     }
-
-    #endregion
 
     private void buttonOK_Click(object sender, RoutedEventArgs e)
     {

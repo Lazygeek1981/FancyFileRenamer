@@ -53,6 +53,7 @@
     <Compile Include="CreateDummyFiles.cs" />
     <Compile Include="ExifTagTests.cs" />
     <Compile Include="FilenameSortingTests.cs" />
+    <Compile Include="FilePropertyTaskTests.cs" />
     <Compile Include="InsertTaskTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
