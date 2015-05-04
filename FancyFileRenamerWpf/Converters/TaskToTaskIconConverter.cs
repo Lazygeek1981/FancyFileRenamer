@@ -39,7 +39,7 @@ namespace FancyFileRenamerWpf.Converters
 			icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.EnumerateTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_enumerate.png"), UriKind.Absolute)));
 			icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.ClearEntireFilenameTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_clear.png"), UriKind.Absolute)));
 			icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.InsertTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_insert.png"), UriKind.Absolute)));
-			icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.FilePropertyTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_insert.png"), UriKind.Absolute)));
+			icons.Add(typeof(FancyFileRenamer.TaskLibrary.RenamingTasks.FilePropertyTask), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/task_fileproperty.png"), UriKind.Absolute)));
 
 			//TODO
 			icons.Add(typeof(FancyFileRenamer.TaskLibrary.SortingTasks.FilenameSorting), new BitmapImage(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "Images/sort_filename.png"), UriKind.Absolute)));

@@ -57,6 +57,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 							break;
 						case ExifDateTimeSorting.GPSTimestamp:
 							exifDate = getExifDate(datei, ExifLib.ExifTags.GPSTimestamp);
+							break;
 					}
 
 					if (exifDate.HasValue)
