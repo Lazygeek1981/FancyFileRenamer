@@ -13,6 +13,7 @@ namespace FancyFileRenamer.TaskLibrary
 	{
 		private FileInfo fileinfo;
 		private string newFilename;
+		private bool isSelected = true;
 
 		public File(string filepath)
 		{
@@ -29,7 +30,20 @@ namespace FancyFileRenamer.TaskLibrary
 			IsSelected = true;
 		}
 
+
 		public bool IsSelected { get; set; }
+		//{
+		//	get { return isSelected; }
+		//	set
+		//	{
+		//		if (isSelected == value)
+		//			return;
+		//		isSelected = value;
+		//		if (PropertyChanged != null)
+		//			PropertyChanged(this,
+		//					new PropertyChangedEventArgs("IsSelected"));
+		//	}
+		//}
 
 		public bool IsValid { get; set; }
 

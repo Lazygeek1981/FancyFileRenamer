@@ -87,6 +87,9 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
 		private DateTime? getExifDate(File datei, ExifLib.ExifTags tag)
 		{
+			if (datei.ExifTagValues.Count == 0)
+				return null;
+
 			DateTime dateTime = new DateTime();
 			if (DateTime.TryParseExact(datei.ExifTagValues[tag], "yyyy:MM:dd HH:mm:ss", CultureInfo.CurrentCulture, DateTimeStyles.None, out dateTime))
 			{
