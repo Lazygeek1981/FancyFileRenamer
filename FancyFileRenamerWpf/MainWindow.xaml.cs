@@ -301,5 +301,30 @@ namespace FancyFileRenamerWpf
 
 
 		}
+
+		private void buttonRenamingTaskDown_Click(object sender, RoutedEventArgs e)
+		{
+			
+			IRenamingTask task = (IRenamingTask)renamingTasks.SelectedItem;
+
+			int i = CurrentRenamingTasks.IndexOf(task);
+
+			CurrentRenamingTasks.RemoveAt(i);
+			CurrentRenamingTasks.Insert(i + 1, task);
+			renamingTasks.SelectedItem = task;
+
+			
+		}
+
+		private void buttonRenamingTaskUp_Click(object sender, RoutedEventArgs e)
+		{
+			IRenamingTask task = (IRenamingTask)renamingTasks.SelectedItem;
+
+			int i = CurrentRenamingTasks.IndexOf(task);
+
+			CurrentRenamingTasks.RemoveAt(i);
+			CurrentRenamingTasks.Insert(i - 1, task);
+			renamingTasks.SelectedItem = task;
+		}
   }
 }
