@@ -9,6 +9,7 @@
 		<converters:TaskToTaskIconConverter x:Key="taskToTaskIconConverter" />
 		<converters:ValidToColorConverter x:Key="validToColorConverter" />
 		<converters:DateTimeToStringConverter x:Key="dateTimeToStringConverter" />
+		<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
 	</Window.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -145,6 +146,15 @@
 			<ListView HorizontalContentAlignment="Stretch" Name="listResult" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listResult_ScrollChanged">
 				<ListView.ItemTemplate>
 					<DataTemplate>
+						<!--<DataTemplate.Resources>
+							<Style TargetType="{x:Type Label}">
+								<Style.Triggers>
+									<DataTrigger Binding="{Binding IsSelected}" Value="False">
+										<Setter Property="Visibility" Value="Hidden"/>
+									</DataTrigger>
+								</Style.Triggers>
+							</Style>
+						</DataTemplate.Resources>-->
 						<Label Content="{Binding NewFilename}" Background="{Binding IsValid, Converter={StaticResource validToColorConverter} }" />
 					</DataTemplate>
 				</ListView.ItemTemplate>

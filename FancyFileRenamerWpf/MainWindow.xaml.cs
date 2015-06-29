@@ -297,10 +297,9 @@ namespace FancyFileRenamerWpf
       resultScrolling = false;
     }
 
-		private void listSource_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-
-
+			int i = 0;
 		}
 
 		private void buttonRenamingTaskDown_Click(object sender, RoutedEventArgs e)

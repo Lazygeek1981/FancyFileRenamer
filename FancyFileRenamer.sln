@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FancyFileRenamerWpf", "Fanc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskLibrary", "TaskLibrary\TaskLibrary.csproj", "{069AE3E3-0E28-4EF0-AF40-187EEF2DB1D3}"
 EndProject
+#Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FancySetup", "FancySetup\FancySetup.vdproj", "{69095091-6DBB-4C83-ACF5-A038EF21FEE2}"
+#EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35CDBD52-F1DE-4C01-8BB9-E02AA3D0C37F}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
