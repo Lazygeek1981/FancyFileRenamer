@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using FancyFileRenamer.TaskLibrary;
 using System.IO;
 using FancyFileRenamer.TaskLibrary.SortingTasks;
+using FancyFileRenamerWpf.TaskEditControl;
 
 namespace FancyFileRenamerWpf
 {
@@ -325,6 +326,16 @@ namespace FancyFileRenamerWpf
 			CurrentRenamingTasks.RemoveAt(i);
 			CurrentRenamingTasks.Insert(i - 1, task);
 			renamingTasks.SelectedItem = task;
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			TaskEditWindow editWindow = new TaskEditWindow();
+
+			ChangeFileExtensionUserControl uc = new ChangeFileExtensionUserControl();
+
+			editWindow.SetTaskEditingUserControl(uc);
+			editWindow.ShowDialog();
 		}
   }
 }
