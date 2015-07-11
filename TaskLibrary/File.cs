@@ -31,19 +31,18 @@ namespace FancyFileRenamer.TaskLibrary
 		}
 
 
-		public bool IsSelected { get; set; }
-		//{
-		//	get { return isSelected; }
-		//	set
-		//	{
-		//		if (isSelected == value)
-		//			return;
-		//		isSelected = value;
-		//		if (PropertyChanged != null)
-		//			PropertyChanged(this,
-		//					new PropertyChangedEventArgs("IsSelected"));
-		//	}
-		//}
+		public bool IsSelected //{ get; set; }
+		{
+			get { return isSelected; }
+			set
+			{
+				if (isSelected == value)
+					return;
+				isSelected = value;
+				if (PropertyChanged != null)
+					PropertyChanged(this,	new PropertyChangedEventArgs("IsSelected"));
+			}
+		}
 
 		public bool IsValid { get; set; }
 

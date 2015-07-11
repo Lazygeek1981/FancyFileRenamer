@@ -110,6 +110,7 @@
     </ApplicationDefinition>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="Converters\SelectedToColorConverter.cs" />
     <Compile Include="FileInfoWindow.xaml.cs">
       <DependentUpon>FileInfoWindow.xaml</DependentUpon>
     </Compile>
