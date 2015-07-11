@@ -26,7 +26,7 @@
 		<StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal">
 			<TextBox Name="txtPath" MinWidth="400" MinHeight="21" Margin="5" />
 			<Button Name="buttonLoadPath" Click="buttonLoadPath_Click" Width="Auto" Margin="5" >Load Path</Button>
-			<CheckBox Name="checkRealTimeUpdate" IsChecked="True" IsThreeState="False" VerticalAlignment="Center" Margin="50,5">RealTime Update</CheckBox>
+			<CheckBox Name="checkRealTimeUpdate" IsChecked="False" IsThreeState="False" VerticalAlignment="Center" Margin="50,5">RealTime Update</CheckBox>
 			<Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="150,5">Start Renaming</Button>
 		</StackPanel>
 		<GroupBox Header="Source Files" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" Margin="5">
@@ -94,10 +94,10 @@
 				<Button Grid.Column="1" Grid.Row="1" Name="buttonRenamingTaskEdit" IsEnabled="{Binding ElementName=renamingTasks, Path=SelectedItem, Converter={StaticResource listBoxItemToBoolConverter}}" Click="buttonRenamingTaskEdit_Click">
 					<Image Source="Images/edit_task.png" Height="16" Width="16" />
 				</Button>
-				<Button Grid.Column="1" Grid.Row="2" Name="buttonRenamingTaskUp">/\</Button>
+				<Button Grid.Column="1" Grid.Row="2" Name="buttonRenamingTaskUp" Click="buttonRenamingTaskUp_Click" >/\</Button>
 
 				<Button Grid.Column="1" Grid.Row="3" Name="buttonRenamingTaskRemove" IsEnabled="{Binding ElementName=renamingTasks, Path=SelectedItem, Converter={StaticResource listBoxItemToBoolConverter}}" Click="buttonRenamingTaskRemove_Click">-</Button>
-				<Button Grid.Column="1" Grid.Row="4" Name="buttonRenamingTaskDown">\/</Button>
+				<Button Grid.Column="1" Grid.Row="4" Name="buttonRenamingTaskDown" Click="buttonRenamingTaskDown_Click">\/</Button>
 			</Grid>
 		</GroupBox>
 		<GroupBox Grid.Row="2" Grid.Column="1" MinHeight="300" Header="Sorting Tasks" Padding="5" Margin="5">

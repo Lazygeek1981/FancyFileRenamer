@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FancyFileRenamer", "FancyFileRenamer\FancyFileRenamer.csproj", "{520BC503-26D3-46D2-9E2B-688D9160CA41}"
 EndProject
@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35CDBD
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileDetailsViewer", "FileDetailsViewer\FileDetailsViewer.csproj", "{AC4C9F22-9471-4DFA-90A7-884544606930}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,8 +44,10 @@ Global
 		{069AE3E3-0E28-4EF0-AF40-187EEF2DB1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{069AE3E3-0E28-4EF0-AF40-187EEF2DB1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{069AE3E3-0E28-4EF0-AF40-187EEF2DB1D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69095091-6DBB-4C83-ACF5-A038EF21FEE2}.Debug|Any CPU.ActiveCfg = Debug
-		{69095091-6DBB-4C83-ACF5-A038EF21FEE2}.Release|Any CPU.ActiveCfg = Release
+		{AC4C9F22-9471-4DFA-90A7-884544606930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4C9F22-9471-4DFA-90A7-884544606930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4C9F22-9471-4DFA-90A7-884544606930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4C9F22-9471-4DFA-90A7-884544606930}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
