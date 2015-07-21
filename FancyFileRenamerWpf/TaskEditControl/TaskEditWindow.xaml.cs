@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FancyFileRenamer.TaskLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,43 @@ namespace FancyFileRenamerWpf.TaskEditControl
 	/// <summary>
 	/// Interaction logic for TaskEditWindow.xaml
 	/// </summary>
-	public partial class TaskEditWindow : Window
+	public partial class TaskEditWindow : Window, ITaskEditControl
 	{
+		private ITaskEditUserControl taskEditControl { get; set; }
+
 		public TaskEditWindow()
 		{
 			InitializeComponent();
 		}
 
-		public void SetTaskEditingUserControl(ChangeFileExtensionUserControl uc)
+		public void SetTaskEditingUserControl(ITaskEditUserControl uc)
 		{
-			Content.Content = uc;
+			taskEditControl = uc;
+			Content.Content = taskEditControl;
+			Title = uc.GetTitle();
+		}
+
+		private void btnOK_Click(object sender, RoutedEventArgs e)
+		{
+			taskEditControl.UpdateTaskFromControl();
+			DialogResult = true;
+			this.Close();
+		}
+
+		private void btnAbort_Click(object sender, RoutedEventArgs e)
+		{
+			DialogResult = false;
+			this.Close();
+		}
+
+		public void UpdateTaskFromControl()
+		{
+			taskEditControl.UpdateTaskFromControl();
+		}
+
+		public void SetTaskToControl(ITask task)
+		{
+			taskEditControl.SetTaskToControl(task);
 		}
 	}
 }

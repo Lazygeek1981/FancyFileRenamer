@@ -135,8 +135,12 @@
     <Compile Include="TaskEditControl\EnumerateTaskEditControl.xaml.cs">
       <DependentUpon>EnumerateTaskEditControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TaskEditControl\ITaskEditUserControl.cs" />
     <Compile Include="TaskEditControl\ReplaceTaskEditControl.xaml.cs">
       <DependentUpon>ReplaceTaskEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskEditControl\TaskEditContainer.xaml.cs">
+      <DependentUpon>TaskEditContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="TaskEditControl\TaskEditWindow.xaml.cs">
       <DependentUpon>TaskEditWindow.xaml</DependentUpon>
@@ -190,6 +194,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TaskEditControl\ReplaceTaskEditControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskEditControl\TaskEditContainer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

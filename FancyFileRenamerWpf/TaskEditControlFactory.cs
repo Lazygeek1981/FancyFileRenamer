@@ -28,6 +28,14 @@ namespace FancyFileRenamerWpf
 				editControl = new ExifSortingTaskEditControl();
 			else if (task is FilePropertyTask)
 				editControl = new FilePropertyTaskEditControl();
+			else if (task is ChangeFileExtensionTask)
+			{
+				TaskEditWindow editWindow = new TaskEditWindow();
+
+				ChangeFileExtensionUserControl uc = new ChangeFileExtensionUserControl();
+				editWindow.SetTaskEditingUserControl(uc);
+				editControl = editWindow;
+			}
 			else
 				throw new InvalidOperationException("Can't find edit control for task");
 

@@ -7,20 +7,20 @@
              d:DesignHeight="300" d:DesignWidth="300">
 	<Grid>
 		<StackPanel Orientation="Vertical">
-			<RadioButton Height="32" VerticalContentAlignment="Center">
+			<RadioButton Name="radToLower" Height="32" VerticalContentAlignment="Center">
 				<StackPanel Orientation="Horizontal">
 					<Label>To Lower</Label>
 				</StackPanel>
 			</RadioButton>
-			<RadioButton Height="32" VerticalContentAlignment="Center">
+			<RadioButton Name="radToUpper" Height="32" VerticalContentAlignment="Center">
 				<StackPanel Orientation="Horizontal">
 					<Label>To Upper</Label>
 				</StackPanel>
 			</RadioButton>
-			<RadioButton Height="32" VerticalContentAlignment="Center">
+			<RadioButton Name="radToCustom" Height="32" VerticalContentAlignment="Center">
 				<StackPanel Orientation="Horizontal">
 					<Label>Custom:</Label>
-					<TextBox Width="50"></TextBox>
+					<TextBox Name="txtCustomExtension" Width="50"></TextBox>
 				</StackPanel>
 				</RadioButton>
 		</StackPanel>

@@ -57,8 +57,10 @@
     <Compile Include="Project.cs" />
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
     <Compile Include="RenamingTasks\ClearEntireFilenameTask.cs" />
+    <Compile Include="RenamingTasks\ConditionalTask.cs" />
     <Compile Include="RenamingTasks\EnumerateTask.cs" />
     <Compile Include="RenamingTasks\FilePropertyTask.cs" />
+    <Compile Include="RenamingTasks\ICondition.cs" />
     <Compile Include="RenamingTasks\InsertTask.cs" />
     <Compile Include="RenamingTasks\TaskPositionPart.cs" />
     <Compile Include="RenamingTasks\ReplaceTask.cs" />
