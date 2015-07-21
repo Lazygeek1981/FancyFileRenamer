@@ -10,6 +10,7 @@
 		<converters:ValidToColorConverter x:Key="validToColorConverter" />
 		<converters:DateTimeToStringConverter x:Key="dateTimeToStringConverter" />
 		<!--<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />-->
+		<converters:SelectedToColorConverter x:Key="selectedToColorConverter" />
 	</Window.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>
@@ -150,12 +151,12 @@
 							<Style TargetType="{x:Type Label}">
 								<Style.Triggers>
 									<DataTrigger Binding="{Binding IsSelected}" Value="False">
-										<Setter Property="Visibility" Value="Hidden"/>
+										<Setter Property="Foreground" Value="Red"/>
 									</DataTrigger>
 								</Style.Triggers>
 							</Style>
 						</DataTemplate.Resources>-->
-						<Label Content="{Binding NewFilename}" Background="{Binding IsValid, Converter={StaticResource validToColorConverter} }" />
+						<Label Content="{Binding NewFilename}" Background="{Binding IsValid, Converter={StaticResource validToColorConverter} }" Foreground="{Binding IsSelected, Converter={StaticResource boolToVisibilityConverter}}" />
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
