@@ -30,7 +30,7 @@ namespace FancyFileRenamerWpf.TaskEditControl
 		public void SetTaskEditingUserControl(ITaskEditUserControl uc)
 		{
 			taskEditControl = uc;
-			Content.Content = taskEditControl;
+			ContentControl.Content = taskEditControl;
 			Title = uc.GetTitle();
 		}
 

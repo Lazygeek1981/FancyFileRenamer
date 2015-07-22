@@ -49,12 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractTask.cs" />
+    <Compile Include="Conditions\FilePropertyCondition.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="ExifTagToType.cs" />
     <Compile Include="File.cs" />
     <Compile Include="ITask.cs" />
     <Compile Include="ITaskEditControl.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="PropertyChangingTasks\EXIFDateOffsetTask.cs" />
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
     <Compile Include="RenamingTasks\ClearEntireFilenameTask.cs" />
     <Compile Include="RenamingTasks\ConditionalTask.cs" />

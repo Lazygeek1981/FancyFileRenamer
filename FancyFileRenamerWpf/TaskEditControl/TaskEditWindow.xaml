@@ -7,7 +7,7 @@
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="auto" />
 		</Grid.RowDefinitions>
-		<ContentControl Margin="25" Padding="25" Name="Content" Grid.Row="0"></ContentControl>
+		<ContentControl Margin="25" Padding="25" Name="ContentControl" Grid.Row="0"></ContentControl>
 		<StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="1">
 			<Button Width="100" Padding="5" Margin="5" Name="btnOK" Click="btnOK_Click">OK</Button>
 			<Button Width="100" Padding="5" Margin="5" Name="btnAbort" Click="btnAbort_Click">Abbrechen</Button>

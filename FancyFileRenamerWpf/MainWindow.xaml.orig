@@ -9,8 +9,12 @@
 		<converters:TaskToTaskIconConverter x:Key="taskToTaskIconConverter" />
 		<converters:ValidToColorConverter x:Key="validToColorConverter" />
 		<converters:DateTimeToStringConverter x:Key="dateTimeToStringConverter" />
+<<<<<<< HEAD
+		<!--<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />-->
+=======
 		<converters:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
 		<converters:SelectedToColorConverter x:Key="selectedToColorConverter" />
+>>>>>>> bca26fe04e1511e9b2ac92e494d0796c46382516
 	</Window.Resources>
 	<Grid>
 		<Grid.ColumnDefinitions>

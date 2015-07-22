@@ -13,4 +13,6 @@ namespace FancyFileRenamer.TaskLibrary.Enums
 	public enum ExifDateTimeSorting { DateTime, DateTimeDigitized, DateTimeOriginal, GPSTimestamp }
 
 	public enum FileExtensionChange { ToUpper, ToLower, Custom}
+
+	public enum BooleanRelation { Equal, NotEqual }
 }

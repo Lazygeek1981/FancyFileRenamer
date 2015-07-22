@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary
 {
-  public interface ITask : INotifyPropertyChanged
-  {
-    string NameInTaskSelectionList { get; }
+	public interface ITask : INotifyPropertyChanged
+	{
+		string NameInTaskSelectionList { get; }
 
-    string Description { get; }
-  }
+		string Description { get; }
+
+		//ITask GetNewInstance();
+	}
 }

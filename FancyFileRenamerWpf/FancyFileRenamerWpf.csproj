@@ -124,6 +124,9 @@
     <Compile Include="TaskEditControl\ClearEntireFilenameTaskEditControl.xaml.cs">
       <DependentUpon>ClearEntireFilenameTaskEditControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TaskEditControl\ConditionalTaskEditControl.xaml.cs">
+      <DependentUpon>ConditionalTaskEditControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskEditControl\ExifSortingTaskEditControl.xaml.cs">
       <DependentUpon>ExifSortingTaskEditControl.xaml</DependentUpon>
     </Compile>
@@ -177,6 +180,10 @@
     <Page Include="TaskEditControl\ClearEntireFilenameTaskEditControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskEditControl\ConditionalTaskEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TaskEditControl\ExifSortingTaskEditControl.xaml">
       <SubType>Designer</SubType>
