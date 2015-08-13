@@ -34,6 +34,8 @@ namespace FancyFileRenamerWpf
 
 		public TrulyObservableCollection<ISortingTask> CurrentSortingTasks { get; set; }
 
+		public TrulyObservableCollection<FileInfoEntry> SelectedSourceFile { get; set; }
+
 		public Project Project { get; set; }
 
 		public MainWindow()
@@ -47,6 +49,8 @@ namespace FancyFileRenamerWpf
 
 			CurrentRenamingTasks = new TrulyObservableCollection<IRenamingTask>();
 			CurrentSortingTasks = new TrulyObservableCollection<ISortingTask>();
+			SelectedSourceFile = new TrulyObservableCollection<FileInfoEntry>();
+
 
 			//#if DEBUG
 			//      createDebugDummyData();
@@ -112,7 +116,7 @@ namespace FancyFileRenamerWpf
 
 		private void buttonRenamingTaskAdd_Click(object sender, RoutedEventArgs e)
 		{
-			IRenamingTask task = (comboTasks.SelectedItem as IRenamingTask).GetNewInstance();
+			IRenamingTask task = (IRenamingTask)(comboTasks.SelectedItem as ITask).GetNewInstance();
 
 			task.PropertyChanged += task_PropertyChanged;
 			CurrentRenamingTasks.Add(task);
@@ -220,7 +224,7 @@ namespace FancyFileRenamerWpf
 
 		private void buttonSortingTaskAdd_Click(object sender, RoutedEventArgs e)
 		{
-			ISortingTask task = (comboSortingTasks.SelectedItem as ISortingTask).GetNewInstance();
+			ISortingTask task = (ISortingTask)(comboSortingTasks.SelectedItem as ISortingTask).GetNewInstance();
 
 			task.PropertyChanged += task_PropertyChanged;
 			CurrentSortingTasks.Add(task);
@@ -330,6 +334,40 @@ namespace FancyFileRenamerWpf
 
 			editWindow.SetTaskEditingUserControl(uc);
 			editWindow.ShowDialog();
+		}
+
+		private FileInfoWindow fileInfoWindow = new FileInfoWindow();
+
+		private void fileInfo_Click(object sender, RoutedEventArgs e)
+		{
+			fileInfoWindow.SetFile(listSource.SelectedItem as FancyFile);
+			fileInfoWindow.Show();
+		}
+
+		private void updateSelectedSourceFileInfo()
+		{
+			//File file = listSource.SelectedItem as File;
+
+		}
+
+		private void btn_selectNone_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void btn_selectAll_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void btn_selectInvert_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void btn_selectFilter_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }

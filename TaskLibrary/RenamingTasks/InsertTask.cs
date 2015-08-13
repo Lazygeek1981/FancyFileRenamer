@@ -21,7 +21,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public int Position { get { return position; } set { position = value; propertyChanged("Position"); } }
 
-    public void ApplyOn(File datei)
+    public void ApplyOn(FancyFile datei)
     {
       try
       {
@@ -49,7 +49,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return "Insert text"; }
     }
 
-    public IRenamingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new InsertTask();
     }

@@ -16,10 +16,10 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
     public ExifDateSorting(SortingOrder order)
     {
       Ordering = order;
-      SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTimeDigitized;
+      SelectedDateTimeSortingTag = ExifDateTimeProperty.DateTimeDigitized;
     }
 
-    public ExifDateTimeSorting SelectedDateTimeSortingTag { get; set; }
+    public ExifDateTimeProperty SelectedDateTimeSortingTag { get; set; }
 
     public override string NameInTaskSelectionList
     {
@@ -33,12 +33,12 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
 
     public SortingOrder Ordering { get; set; }
 
-    public ISortingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new ExifDateSorting();
     }
 
-    public int Compare(File x, File y)
+    public int Compare(FancyFile x, FancyFile y)
     {
       if (x == null && y == null)
         return 0;
@@ -53,27 +53,27 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
 
         switch (SelectedDateTimeSortingTag)
         {
-          case ExifDateTimeSorting.DateTime:
+          case ExifDateTimeProperty.DateTime:
             if (x.HasExifTags)
               xDate = x.ExifTagValues[ExifLib.ExifTags.DateTime];
             if (y.HasExifTags)
               yDate = y.ExifTagValues[ExifLib.ExifTags.DateTime];
             break;
 
-          case ExifDateTimeSorting.DateTimeDigitized:
+          case ExifDateTimeProperty.DateTimeDigitized:
             if (x.HasExifTags)
               xDate = x.ExifTagValues[ExifLib.ExifTags.DateTimeDigitized];
             if (y.HasExifTags)
               yDate = y.ExifTagValues[ExifLib.ExifTags.DateTimeDigitized];
 
             break;
-          case ExifDateTimeSorting.DateTimeOriginal:
+          case ExifDateTimeProperty.DateTimeOriginal:
             if (x.HasExifTags)
               xDate = x.ExifTagValues[ExifLib.ExifTags.DateTimeOriginal];
             if (y.HasExifTags)
               yDate = y.ExifTagValues[ExifLib.ExifTags.DateTimeOriginal];
             break;
-          case ExifDateTimeSorting.GPSTimestamp:
+          case ExifDateTimeProperty.GPSTimestamp:
             if (x.HasExifTags)
               xDate = x.ExifTagValues[ExifLib.ExifTags.GPSTimestamp];
             if (y.HasExifTags)

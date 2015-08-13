@@ -15,34 +15,37 @@ using FancyFileRenamer.TaskLibrary;
 
 namespace FancyFileRenamerWpf
 {
-  /// <summary>
-  /// Interaction logic for FileInfoWindow.xaml
-  /// </summary>
-  public partial class FileInfoWindow : Window
-  {
-    public FileInfoWindow()
-    {
-      InitializeComponent();
+	/// <summary>
+	/// Interaction logic for FileInfoWindow.xaml
+	/// </summary>
+	public partial class FileInfoWindow : Window
+	{
+		public FileInfoWindow()
+		{
+			InitializeComponent();
 
-      DataContext = this;
+			DataContext = this;
 
-      CurrentEntries = new List<Entry>();
-    }
+			CurrentEntries = new List<Entry>();
+		}
 
-    public void SetFile(File file)
-    {
-      CurrentEntries.Clear();
+		public void SetFile(FancyFile file)
+		{
+			CurrentEntries.Clear();
 
-      
+			if (file == null)
+				return;
 
-    }
+			CurrentEntries.Add(new Entry { Key = "Filename", Value = file.Filename });
+			//CurrentEntries.Add();
+		}
 
-    public List<Entry> CurrentEntries { get; set; }
+		public List<Entry> CurrentEntries { get; set; }
 
-    public class Entry
-    {
-      public string Key { get; set; }
-      public string Value { get; set; }
-    }
-  }
+		public class Entry
+		{
+			public string Key { get; set; }
+			public string Value { get; set; }
+		}
+	}
 }

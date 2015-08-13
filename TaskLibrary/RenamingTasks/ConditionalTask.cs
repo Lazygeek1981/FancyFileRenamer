@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
-	public class ConditionalTask : IRenamingTask
+	public class ConditionalTask : AbstractTask, IRenamingTask
 	{
 		public ConditionalTask() { }
 
@@ -20,7 +20,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
 		public IRenamingTask Action { get; set; }
 
-		public void ApplyOn(File datei)
+		public void ApplyOn(FancyFile datei)
 		{
 			if (Condition.IsFulFilled())
 				Action.ApplyOn(datei);
@@ -31,14 +31,14 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 			get { return this; }
 		}
 
-		public string Description
+		public override string Description
 		{
 			get { return "Conditional Task"; }
 		}
 
-		public IRenamingTask GetNewInstance()
+		public override ITask GetNewInstance()
 		{
-			return new ConditionalTask(Condition.GetNewInstance(), Action.GetNewInstance());
+			return new ConditionalTask(Condition.GetNewInstance(), (IRenamingTask)Action.GetNewInstance());
 		}
 
 		public void ResetTask()
@@ -47,7 +47,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 			Action = null;
 		}
 
-		public string NameInTaskSelectionList
+		public override string NameInTaskSelectionList
 		{
 			get { return "Conditional Task"; }
 		}

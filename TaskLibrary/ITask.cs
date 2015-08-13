@@ -13,6 +13,6 @@ namespace FancyFileRenamer.TaskLibrary
 
 		string Description { get; }
 
-		//ITask GetNewInstance();
+		ITask GetNewInstance();
 	}
 }

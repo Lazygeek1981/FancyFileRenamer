@@ -21,7 +21,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 		public string NewExtension { get; set; }
 		public FileExtensionChange ChangeMode { get; set; }
 
-		public void ApplyOn(File datei)
+		public void ApplyOn(FancyFile datei)
 		{
 			string newExtension = System.IO.Path.GetExtension(datei.Filename);
 
@@ -57,7 +57,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 			get { return "Change file extension"; }
 		}
 
-		public IRenamingTask GetNewInstance()
+		public override ITask GetNewInstance()
 		{
 			return new ChangeFileExtensionTask();
 		}

@@ -39,7 +39,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       return currentCounter.Value;
     }
 
-    public void ApplyOn(File datei)
+    public void ApplyOn(FancyFile datei)
     {
       try
       {
@@ -79,7 +79,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return "Enumerate"; }
     }
 
-    public IRenamingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new EnumerateTask();
     }

@@ -15,7 +15,7 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
     
     public SortingOrder Ordering { get; set; }
 
-    public int Compare(File fileA, File fileB)
+    public int Compare(FancyFile fileA, FancyFile fileB)
     {
       if (Ordering == SortingOrder.Ascending)
         return fileA.CreationDate.CompareTo(fileB.CreationDate);
@@ -28,16 +28,12 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
       get { return "Creation Date"; }
     }
 
-    #region ISortingTask Members
 
-
-    public ISortingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new CreationDateSorting();
 
     }
-
-    #endregion
 
     public override string Description
     {

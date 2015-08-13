@@ -18,7 +18,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public bool ClearFileExtension { get { return clearFileExtension; } set { clearFileExtension = value; propertyChanged("ClearFileExtension"); } }
 
-    public void ApplyOn(File datei)
+    public void ApplyOn(FancyFile datei)
     {
       if (ClearFileExtension)
         datei.NewFilename = String.Empty;
@@ -41,7 +41,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return "Clear entire filename"; }
     }
 
-    public IRenamingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new ClearEntireFilenameTask();
     }

@@ -6,19 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExifLib;
+using FancyFileRenamer.TaskLibrary.Enums;
+using System.Globalization;
 
 namespace FancyFileRenamer.TaskLibrary
 {
-	public class File : INotifyPropertyChanged
+	public class FancyFile : INotifyPropertyChanged
 	{
+		public static Dictionary<ExifLib.ExifTags, ExifDateTimeProperty> ExifLibTagToExifDateTimeEnumProperty = new Dictionary<ExifTags, ExifDateTimeProperty>
+		{
+			{ExifTags.DateTime, ExifDateTimeProperty.DateTime},
+			{ExifTags.DateTimeDigitized, ExifDateTimeProperty.DateTimeDigitized},
+			{ExifTags.DateTimeOriginal, ExifDateTimeProperty.DateTimeOriginal},
+			{ExifTags.GPSTimestamp, ExifDateTimeProperty.GPSTimestamp}
+		};
+
 		private FileInfo fileinfo;
 		private string newFilename;
 		private bool isSelected = true;
 
-		public File(string filepath)
+		public FancyFile(string filepath)
 		{
 			fileinfo = new FileInfo(filepath);
 			ExifTagValues = new Dictionary<ExifLib.ExifTags, string>();
+			ExifTagDateValues = new Dictionary<ExifDateTimeProperty, DateTime?>();
 
 			checkForImageFile();
 
@@ -40,17 +51,19 @@ namespace FancyFileRenamer.TaskLibrary
 					return;
 				isSelected = value;
 				if (PropertyChanged != null)
-					PropertyChanged(this,	new PropertyChangedEventArgs("IsSelected"));
+					PropertyChanged(this, new PropertyChangedEventArgs("IsSelected"));
 			}
 		}
 
 		public bool IsValid { get; set; }
 
-		public File Self { get { return this; } }
+		public FancyFile Self { get { return this; } }
 
 		public string Filepath { get; private set; }
 
 		public string Filename { get; private set; }
+
+		public Dictionary<ExifDateTimeProperty, DateTime?> ExifTagDateValues { get; set; }
 
 		public Dictionary<ExifTags, string> ExifTagValues { get; set; }
 
@@ -60,30 +73,51 @@ namespace FancyFileRenamer.TaskLibrary
 
 		public DateTime CreationDate { get { return fileinfo.CreationTime; } }
 
+		public DateTime ChangeDate { get { return fileinfo.LastWriteTime; } }
+
 		public DateTime LastWriteDate { get { return fileinfo.LastWriteTime; } }
 
 		private void checkForImageFile()
 		{
 			if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))
 			{
+				HasExifTags = true;
 				using (ExifReader reader = new ExifReader(fileinfo.FullName))
 				{
 					foreach (var value in Enum.GetValues(typeof(ExifLib.ExifTags)))
 					{
+						ExifTags currentTag = (ExifTags)value;
 						object result = null;
 
-						if (reader.GetTagValue<object>((ExifTags)value, out result))
+
+						if (reader.GetTagValue<object>(currentTag, out result))
 						{
-							ExifTagValues.Add((ExifTags)value, result.ToString());
+							ExifTagValues.Add(currentTag, result.ToString());
+
+							if (ExifLibTagToExifDateTimeEnumProperty.ContainsKey(currentTag))
+								ExifTagDateValues.Add(ExifLibTagToExifDateTimeEnumProperty[currentTag], getExifDate(currentTag));
 						}
 						else
-							ExifTagValues.Add((ExifTags)value, String.Empty);
+							ExifTagValues.Add(currentTag, String.Empty);
 					}
 				}
-				HasExifTags = true;
 			}
 			else
 				HasExifTags = false;
+		}
+
+		private DateTime? getExifDate(ExifTags tag)
+		{
+			if (!HasExifTags)
+				return null;
+
+			DateTime dateTime = new DateTime();
+			if (DateTime.TryParseExact(ExifTagValues[tag], "yyyy:MM:dd HH:mm:ss", CultureInfo.CurrentCulture, DateTimeStyles.None, out dateTime))
+			{
+				return dateTime;
+			}
+			else
+				return null;
 		}
 
 		public long? Size

@@ -15,7 +15,7 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
 
     public SortingOrder Ordering { get; set; }
 
-    public int Compare(File fileA, File fileB)
+    public int Compare(FancyFile fileA, FancyFile fileB)
     {
       int compareResult = 0;
 
@@ -43,15 +43,10 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
       get { return "Size"; }
     }
 
-    #region ISortingTask Members
-
-
-    public ISortingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new SizeSorting();
     }
-
-    #endregion
 
     public override string Description
     {

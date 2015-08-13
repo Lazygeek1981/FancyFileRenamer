@@ -13,7 +13,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 	{
 		public FileProperty SelectedProperty { get; set; }
 
-		public ExifDateTimeSorting ExifTag { get; set; }
+		public ExifDateTimeProperty ExifTag { get; set; }
 
 		public int CustomPosition { get; set; }
 
@@ -24,20 +24,20 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 		public FilePropertyTask()
 		{
 			SelectedProperty = FileProperty.ChangeDate;
-			ExifTag = ExifDateTimeSorting.DateTime;
+			ExifTag = ExifDateTimeProperty.DateTime;
 			CustomPosition = 0;
 			Position = Enums.Position.Beginning;
 			PropertyFormatString = String.Empty;
 		}
 
-		public void ApplyOn(File datei)
+		public void ApplyOn(FancyFile datei)
 		{
 			string propertyText = String.Empty;
 
 			switch (SelectedProperty)
 			{
 				case FileProperty.ChangeDate:
-					propertyText = "NOT IMPLEMENTED";
+					propertyText = datei.ChangeDate.ToString("yyyy'-'MM'-'dd'T'HH'-'mm'-'ss");
 					break;
 				case FileProperty.CreationDate:
 					propertyText = datei.CreationDate.ToString(PropertyFormatString);
@@ -46,16 +46,16 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 					DateTime? exifDate = null;
 					switch (ExifTag)
 					{
-						case ExifDateTimeSorting.DateTime:
+						case ExifDateTimeProperty.DateTime:
 							exifDate = getExifDate(datei, ExifLib.ExifTags.DateTime);
 							break;
-						case ExifDateTimeSorting.DateTimeDigitized:
+						case ExifDateTimeProperty.DateTimeDigitized:
 							exifDate = getExifDate(datei, ExifLib.ExifTags.DateTimeDigitized);
 							break;
-						case ExifDateTimeSorting.DateTimeOriginal:
+						case ExifDateTimeProperty.DateTimeOriginal:
 							exifDate = getExifDate(datei, ExifLib.ExifTags.DateTimeOriginal);
 							break;
-						case ExifDateTimeSorting.GPSTimestamp:
+						case ExifDateTimeProperty.GPSTimestamp:
 							exifDate = getExifDate(datei, ExifLib.ExifTags.GPSTimestamp);
 							break;
 					}
@@ -85,7 +85,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 			}
 		}	
 
-		private DateTime? getExifDate(File datei, ExifLib.ExifTags tag)
+		private DateTime? getExifDate(FancyFile datei, ExifLib.ExifTags tag)
 		{
 			if (datei.ExifTagValues.Count == 0)
 				return null;
@@ -104,7 +104,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 			get { return this; }
 		}
 
-		public IRenamingTask GetNewInstance()
+		public override ITask GetNewInstance()
 		{
 			return new FilePropertyTask();
 		}

@@ -34,26 +34,56 @@
 				<Grid.RowDefinitions>
 					<RowDefinition Height="32"/>
 					<RowDefinition Height="*" />
+					<RowDefinition Height="300" />
 				</Grid.RowDefinitions>
 				<ToolBar Grid.Row="0">
 					<Button Click="Button_Click">Hallo</Button>
+					<Button Click="btn_selectAll_Click" ToolTip="Select all">
+						<Image Source="Images/select_all.png"></Image>
+					</Button>
+					<Button Click="btn_selectNone_Click" ToolTip="Select none">
+						<Image Source="Images/select_none.png"></Image>
+					</Button>
+					<Button Click="btn_selectInvert_Click" ToolTip="Invert selection">
+						<Image Source="Images/select_invert.png"></Image>
+					</Button>
+					<Button Click="btn_selectFilter_Click" ToolTip="Select by filter">
+						<Image Source="Images/select_filter.png"></Image>
+					</Button>
+					<Button Name="fileInfo" Click="fileInfo_Click">Info</Button>
 				</ToolBar>
-				<ListView Name="listSource" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged">
-					<ListView.Resources>
-						<Style TargetType="{x:Type ListViewItem}">
+
+					<ListView Name="listSource" Grid.Row="1" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged">
+						<ListView.Resources>
+							<!--<Style TargetType="{x:Type ListViewItem}">
 							<Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"/>
-						</Style>
-					</ListView.Resources>
-					<ListView.ItemTemplate>
-						<DataTemplate>
-							<StackPanel Orientation="Horizontal">
-								<Label Content="{Binding Filename}" />
-								<Label Content="{Binding Size }" />
-								<Label Content="{Binding ExifPhotoCreationDate, Converter={StaticResource dateTimeToStringConverter}}" />
-							</StackPanel>
-						</DataTemplate>
-					</ListView.ItemTemplate>
-				</ListView>
+						</Style>-->
+						</ListView.Resources>
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<CheckBox Name="Selected" IsChecked="{Binding IsSelected, Mode=TwoWay}"></CheckBox>
+									<Label Content="{Binding Filename}" />
+									<Label Content="{Binding Size }" />
+									<Label Content="{Binding ExifPhotoCreationDate, Converter={StaticResource dateTimeToStringConverter}}" />
+								</StackPanel>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					<ListView Grid.Row="2" Height="300" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=SelectedSourceFile}">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<Label Content="{Binding Key}" />
+									<Label Content="{Binding Value }" />
+								</StackPanel>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+
+					</ListView>
+
+
+					
 			</Grid>
 		</GroupBox>
 		<GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Tasks" Padding="5" Margin="5">

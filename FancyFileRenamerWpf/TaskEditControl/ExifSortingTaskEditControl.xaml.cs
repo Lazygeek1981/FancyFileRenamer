@@ -39,16 +39,16 @@ namespace FancyFileRenamerWpf.TaskEditControl
       { 
         default:
         case 0:
-          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTime;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeProperty.DateTime;
           break;
         case 1:
-          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTimeDigitized;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeProperty.DateTimeDigitized;
           break;
         case 2:
-          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.DateTimeOriginal;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeProperty.DateTimeOriginal;
           break;
         case 3:
-          Task.SelectedDateTimeSortingTag = ExifDateTimeSorting.GPSTimestamp;
+          Task.SelectedDateTimeSortingTag = ExifDateTimeProperty.GPSTimestamp;
           break;
       }
     }
@@ -64,16 +64,16 @@ namespace FancyFileRenamerWpf.TaskEditControl
 
       switch (Task.SelectedDateTimeSortingTag)
       { 
-        case ExifDateTimeSorting.DateTime:
+        case ExifDateTimeProperty.DateTime:
           comboSortingDate.SelectedIndex = 0;
           break;
-        case ExifDateTimeSorting.DateTimeDigitized:
+        case ExifDateTimeProperty.DateTimeDigitized:
           comboSortingDate.SelectedIndex = 1;
           break;
-        case ExifDateTimeSorting.DateTimeOriginal:
+        case ExifDateTimeProperty.DateTimeOriginal:
           comboSortingDate.SelectedIndex = 2;
           break;
-        case ExifDateTimeSorting.GPSTimestamp:
+        case ExifDateTimeProperty.GPSTimestamp:
           comboSortingDate.SelectedIndex = 3;
           break;
       }

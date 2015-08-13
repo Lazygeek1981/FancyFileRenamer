@@ -17,7 +17,7 @@ namespace Tests
 		{
 			FilePropertyTask task = new FilePropertyTask();
 
-			File file = new File("C:\readme.txt");
+			FancyFile file = new FancyFile("C:\readme.txt");
 
 
 

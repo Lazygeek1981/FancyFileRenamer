@@ -22,7 +22,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 
     public string ReplaceWith { get { return replaceWith; } set { replaceWith = value; propertyChanged("ReplaceWith"); } }
 
-    public void ApplyOn(File datei)
+    public void ApplyOn(FancyFile datei)
     {
       if (SearchFor.IsFilled())
         datei.NewFilename = Path.GetFileNameWithoutExtension(datei.NewFilename).Replace(SearchFor, ReplaceWith) + Path.GetExtension(datei.NewFilename);
@@ -44,7 +44,7 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
       get { return this; }
     }
 
-    public IRenamingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new ReplaceTask();
     }

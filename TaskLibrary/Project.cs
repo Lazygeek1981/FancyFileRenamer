@@ -16,20 +16,20 @@ namespace FancyFileRenamer.TaskLibrary
 		private List<IRenamingTask> renamingTasks = new List<IRenamingTask>();
 		private List<ISortingTask> sortingTasks = new List<ISortingTask>();
 
-		private TrulyObservableCollection<File> files = new TrulyObservableCollection<File>();
+		private TrulyObservableCollection<FancyFile> files = new TrulyObservableCollection<FancyFile>();
 
 		private void sourcePathChanged()
 		{
 			files.Clear();
 
 			if (sourcePath.Exists)
-				sourcePath.GetFiles().ToList().ForEach(x => files.Add(new File(x.FullName)));
+				sourcePath.GetFiles().ToList().ForEach(x => files.Add(new FancyFile(x.FullName)));
 		}
 
 
 		public DirectoryInfo SourcePath { get { return sourcePath; } set { sourcePath = value; sourcePathChanged(); } }
 
-		public TrulyObservableCollection<File> Files { get { return files; } set { files = value; } }
+		public TrulyObservableCollection<FancyFile> Files { get { return files; } set { files = value; } }
 
 		//public List<File> TargetFiles { get { return targetFiles; } set { targetFiles = value; } }
 
@@ -46,11 +46,11 @@ namespace FancyFileRenamer.TaskLibrary
 		{
 			MultiComparer comparer = new MultiComparer(SortingTasks.ToArray());    
 		 
-			List<File> newFiles = files.ToList();
+			List<FancyFile> newFiles = files.ToList();
 
 			newFiles.Sort(comparer);
 
-			Files = new TrulyObservableCollection<File>(newFiles);
+			Files = new TrulyObservableCollection<FancyFile>(newFiles);
 		}
 
 		private void renamingTasksChanged()
@@ -62,7 +62,7 @@ namespace FancyFileRenamer.TaskLibrary
 		{
 			renamingTasks.ForEach(x => x.ResetTask());
 
-			foreach (File file in Files)
+			foreach (FancyFile file in Files)
 			{
 				if (!file.IsSelected)
 					continue;
@@ -80,7 +80,7 @@ namespace FancyFileRenamer.TaskLibrary
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach (File file in Files)
+			foreach (FancyFile file in Files)
 			{
 				if (!file.IsSelected)
 					continue;

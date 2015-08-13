@@ -16,7 +16,7 @@ namespace Tests
     [Test]
     public void SortByNameTest()
     {
-      List<File> files = new List<File> { new File(@"bbbb.txt"), new File(@"aaaa.txt") };
+      List<FancyFile> files = new List<FancyFile> { new FancyFile(@"bbbb.txt"), new FancyFile(@"aaaa.txt") };
       FilenameSorting filenameSorter = new FilenameSorting();
 
       MultiComparer sorter = new MultiComparer(filenameSorter);

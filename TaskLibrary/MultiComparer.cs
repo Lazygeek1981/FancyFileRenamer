@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace FancyFileRenamer.TaskLibrary
 {
-  public class MultiComparer : IComparer<File>
+  public class MultiComparer : IComparer<FancyFile>
   {
-    private readonly IComparer<File>[] _comparers;
+    private readonly IComparer<FancyFile>[] _comparers;
 
-    public MultiComparer(params IComparer<File>[] comparers)
+    public MultiComparer(params IComparer<FancyFile>[] comparers)
     {
       _comparers = comparers;
     }
 
-    public int Compare(File x, File y)
+    public int Compare(FancyFile x, FancyFile y)
     {
       int retVal = 0, i = 0;
 

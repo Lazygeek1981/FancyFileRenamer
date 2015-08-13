@@ -19,7 +19,7 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
 
     public SortingOrder Ordering { get; set; }
 
-    public int Compare(File fileA, File fileB)
+    public int Compare(FancyFile fileA, FancyFile fileB)
     {
       if (Ordering == SortingOrder.Ascending)
         return fileA.Filename.CompareTo(fileB.Filename);
@@ -32,15 +32,11 @@ namespace FancyFileRenamer.TaskLibrary.SortingTasks
       get { return "Filename"; }
     }
 
-    #region ISortingTask Members
-
-
-    public ISortingTask GetNewInstance()
+    public override ITask GetNewInstance()
     {
       return new FilenameSorting();
     }
 
-    #endregion
 
     public override string Description
     {

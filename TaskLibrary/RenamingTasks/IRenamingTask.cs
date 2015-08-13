@@ -10,12 +10,10 @@ namespace FancyFileRenamer.TaskLibrary.RenamingTasks
 {
   public interface IRenamingTask : ITask
   {
-    void ApplyOn(File datei);
+    void ApplyOn(FancyFile datei);
 
     IRenamingTask Self { get; }
 
     void ResetTask();
-
-		IRenamingTask GetNewInstance();
   }
 }

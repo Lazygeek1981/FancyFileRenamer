@@ -40,7 +40,7 @@ namespace FancyFileRenamerWpf.TaskEditControl
 				return;
 
 			Task.CustomPosition = textCustomPosition.Text.ToIntegerSafely(0);
-			Task.ExifTag = (ExifDateTimeSorting)comboEXIF.SelectedIndex;
+			Task.ExifTag = (ExifDateTimeProperty)comboEXIF.SelectedIndex;
 			Task.Position = (Position)comboPosition.SelectedIndex;
 			Task.SelectedProperty = (FileProperty)comboProperty.SelectedIndex;
 			Task.PropertyFormatString = textFormatString.Text;
