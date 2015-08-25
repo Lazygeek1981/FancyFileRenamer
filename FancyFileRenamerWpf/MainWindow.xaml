@@ -30,14 +30,13 @@
 			<Button Name="buttonStartRenaming" Click="buttonStartRenaming_Click" Width="Auto" Margin="150,5">Start Renaming</Button>
 		</StackPanel>
 		<GroupBox Header="Source Files" Grid.RowSpan="2" Grid.Column="0" Grid.Row="1" Margin="5">
-			<Grid>
+			<Grid Name="gridSource">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="32"/>
 					<RowDefinition Height="*" />
 					<RowDefinition Height="300" />
 				</Grid.RowDefinitions>
 				<ToolBar Grid.Row="0">
-					<Button Click="Button_Click">Hallo</Button>
 					<Button Click="btn_selectAll_Click" ToolTip="Select all">
 						<Image Source="Images/select_all.png"></Image>
 					</Button>
@@ -50,7 +49,9 @@
 					<Button Click="btn_selectFilter_Click" ToolTip="Select by filter">
 						<Image Source="Images/select_filter.png"></Image>
 					</Button>
-					<Button Name="fileInfo" Click="fileInfo_Click">Info</Button>
+					<Separator></Separator>
+					<ToggleButton IsChecked="True" Name="fileInfo" Click="fileInfo_Click">
+						<Image Source="Images/file_show_info.png"></Image></ToggleButton>
 				</ToolBar>
 
 					<ListView Name="listSource" Grid.Row="1" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=Project.Files}" ScrollViewer.ScrollChanged="listSource_ScrollChanged">
@@ -70,7 +71,7 @@
 							</DataTemplate>
 						</ListView.ItemTemplate>
 					</ListView>
-					<ListView Grid.Row="2" Height="300" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=SelectedSourceFile}">
+					<ListView Name="listViewSourceFileInfo" Grid.Row="2" Height="300" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding Path=SelectedSourceFile}">
 						<ListView.ItemTemplate>
 							<DataTemplate>
 								<StackPanel Orientation="Horizontal">
@@ -79,11 +80,7 @@
 								</StackPanel>
 							</DataTemplate>
 						</ListView.ItemTemplate>
-
 					</ListView>
-
-
-					
 			</Grid>
 		</GroupBox>
 		<GroupBox Grid.Row="1" Grid.Column="1" MinHeight="300" Header="Renaming Tasks" Padding="5" Margin="5">

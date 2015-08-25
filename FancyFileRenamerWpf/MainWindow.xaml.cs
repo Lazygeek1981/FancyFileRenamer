@@ -340,8 +340,18 @@ namespace FancyFileRenamerWpf
 
 		private void fileInfo_Click(object sender, RoutedEventArgs e)
 		{
-			fileInfoWindow.SetFile(listSource.SelectedItem as FancyFile);
-			fileInfoWindow.Show();
+			if (fileInfo.IsChecked.HasValue && fileInfo.IsChecked.Value)
+			{
+				listViewSourceFileInfo.Visibility = System.Windows.Visibility.Visible;
+				gridSource.RowDefinitions[2].Height = new GridLength(300);
+			}
+			else
+			{
+				listViewSourceFileInfo.Visibility = System.Windows.Visibility.Collapsed;
+				gridSource.RowDefinitions[2].Height = new GridLength(0);
+			}
+			//fileInfoWindow.SetFile(listSource.SelectedItem as FancyFile);
+			//fileInfoWindow.Show();
 		}
 
 		private void updateSelectedSourceFileInfo()
