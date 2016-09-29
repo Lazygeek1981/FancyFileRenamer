@@ -35,6 +35,9 @@
     <Reference Include="ExifLib">
       <HintPath>..\packages\ExifLib.1.5.0.0\lib\net40\ExifLib.dll</HintPath>
     </Reference>
+    <Reference Include="ExtendedXmlSerializer">
+      <HintPath>..\packages\ExtendedXmlSerializer.1.2.0\lib\net45\ExtendedXmlSerializer.dll</HintPath>
+    </Reference>
     <Reference Include="LazyLib.Extensions">
       <HintPath>..\packages\LazyLib.Extensions.1.0.0.3\lib\net40\LazyLib.Extensions.dll</HintPath>
     </Reference>
@@ -56,6 +59,7 @@
     <Compile Include="ITask.cs" />
     <Compile Include="ITaskEditControl.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="ProjectManager.cs" />
     <Compile Include="PropertyChangingTasks\EXIFDateOffsetTask.cs" />
     <Compile Include="RenamingTasks\ChangeFileExtensionTask.cs" />
     <Compile Include="RenamingTasks\ClearEntireFilenameTask.cs" />

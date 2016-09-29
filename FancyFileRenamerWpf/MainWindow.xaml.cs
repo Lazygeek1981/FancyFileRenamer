@@ -18,6 +18,7 @@ using FancyFileRenamer.TaskLibrary;
 using System.IO;
 using FancyFileRenamer.TaskLibrary.SortingTasks;
 using FancyFileRenamerWpf.TaskEditControl;
+using Microsoft.Win32;
 
 namespace FancyFileRenamerWpf
 {
@@ -137,7 +138,8 @@ namespace FancyFileRenamerWpf
 		{
 			if (txtPath.Text.IsFilled() && Directory.Exists(txtPath.Text))
 			{
-				Project.SourcePath = new DirectoryInfo(txtPath.Text);
+				Project.SourcePath = txtPath.Text;
+				Project.LoadFiles();
 			}
 			else
 			{
@@ -378,6 +380,60 @@ namespace FancyFileRenamerWpf
 		private void btn_selectFilter_Click(object sender, RoutedEventArgs e)
 		{
 
+		}
+
+		private void MenuItemFileOpen_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				OpenFileDialog openFileDialog = new OpenFileDialog();
+				openFileDialog.DefaultExt = ".xml";
+				openFileDialog.Filter = "Project File (.xml)|*.xml";
+				if (openFileDialog.ShowDialog() == true)
+				{
+					ProjectManager manager = new ProjectManager();
+					Project loadedProject = manager.LoadFromFile(openFileDialog.FileName);
+
+					Project = loadedProject;
+					DataContext = null;
+					DataContext = this;
+					Project.LoadFiles();
+					Project.ApplyTasks();
+				}
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show("Error loading the project" + Environment.NewLine + exception.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void MenuItemFileSave_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				SaveFileDialog saveFileDialog = new SaveFileDialog();
+				saveFileDialog.DefaultExt = ".xml";
+				saveFileDialog.Filter = "Project File (.xml)|*.xml";
+				saveFileDialog.OverwritePrompt = true;
+				if (!String.IsNullOrWhiteSpace(Project.SavePath))
+					saveFileDialog.FileName = Project.SavePath;
+
+				if (saveFileDialog.ShowDialog() == true)
+				{
+					ProjectManager manager = new ProjectManager();
+					manager.SaveToFile(Project, saveFileDialog.FileName);
+				}
+			}
+			catch (Exception exception)
+			{
+				MessageBox.Show("Error saving the project" + Environment.NewLine + exception.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void MenuItemFileQuit_Click(object sender, RoutedEventArgs e)
+		{
+			mainWindow.Close();
+			Application.Current.Shutdown();
 		}
 	}
 }

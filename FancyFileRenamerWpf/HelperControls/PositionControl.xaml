@@ -7,7 +7,7 @@
 	<Grid>
 		<StackPanel Orientation="Vertical">
 			<Label>Position</Label>
-			<ComboBox Name="comboPosition" SelectedIndex="2">
+			<ComboBox Name="comboPosition" SelectedIndex="2" >
 				<ComboBoxItem Tag="Hide">Beginning</ComboBoxItem>
 				<ComboBoxItem Tag="Hide">End</ComboBoxItem>
 				<ComboBoxItem Tag="Show">Custom Position</ComboBoxItem>

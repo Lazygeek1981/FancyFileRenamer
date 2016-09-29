@@ -1,0 +1,16 @@
+
+
+
+1. Exportieren und importieren von "Konfigurationen" - also von "erstellten" Umbennenungsconfigs
+
+
+2. Tabreiter für jedes umbenennen Projekt
+
+
+3. Inline Editor für die einzelnen Tasks im WPF Project
+
+
+4. Schnellere Realtime Vorschau!
+
+
+

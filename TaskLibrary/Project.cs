@@ -7,31 +7,34 @@ using System.Text;
 using System.Threading.Tasks;
 using FancyFileRenamer.TaskLibrary.RenamingTasks;
 using FancyFileRenamer.TaskLibrary.SortingTasks;
+using System.Xml.Serialization;
 
 namespace FancyFileRenamer.TaskLibrary
 {
+	[Serializable]
 	public class Project
 	{
-		private DirectoryInfo sourcePath = null;
+		private DirectoryInfo sourceDirectory = new DirectoryInfo(@"C:\");
 		private List<IRenamingTask> renamingTasks = new List<IRenamingTask>();
 		private List<ISortingTask> sortingTasks = new List<ISortingTask>();
-
 		private TrulyObservableCollection<FancyFile> files = new TrulyObservableCollection<FancyFile>();
+
 
 		private void sourcePathChanged()
 		{
 			files.Clear();
 
-			if (sourcePath.Exists)
-				sourcePath.GetFiles().ToList().ForEach(x => files.Add(new FancyFile(x.FullName)));
+			if (sourceDirectory.Exists)
+				sourceDirectory.GetFiles().ToList().ForEach(x => files.Add(new FancyFile(x.FullName)));
 		}
 
+		public string SourcePath { get; set; }
 
-		public DirectoryInfo SourcePath { get { return sourcePath; } set { sourcePath = value; sourcePathChanged(); } }
+		[XmlIgnore]
+		public DirectoryInfo SourceDirectory { get { return new DirectoryInfo(SourcePath); } }
 
+		[XmlIgnore]
 		public TrulyObservableCollection<FancyFile> Files { get { return files; } set { files = value; } }
-
-		//public List<File> TargetFiles { get { return targetFiles; } set { targetFiles = value; } }
 
 		public List<IRenamingTask> RenamingTasks { get { return renamingTasks; } set { renamingTasks = value; renamingTasksChanged(); } }
 
@@ -42,10 +45,15 @@ namespace FancyFileRenamer.TaskLibrary
 			SortFiles();
 		}
 
+		public void LoadFiles()
+		{
+			sourcePathChanged();
+		}
+
 		public void SortFiles()
 		{
-			MultiComparer comparer = new MultiComparer(SortingTasks.ToArray());    
-		 
+			MultiComparer comparer = new MultiComparer(SortingTasks.ToArray());
+
 			List<FancyFile> newFiles = files.ToList();
 
 			newFiles.Sort(comparer);
@@ -96,5 +104,7 @@ namespace FancyFileRenamer.TaskLibrary
 				}
 			}
 		}
+
+		public string SavePath { get; set; }
 	}
 }

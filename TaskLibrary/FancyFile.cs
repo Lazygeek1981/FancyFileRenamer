@@ -81,25 +81,34 @@ namespace FancyFileRenamer.TaskLibrary
 		{
 			if (fileinfo != null && (fileinfo.Extension.ToLower() == ".jpeg" || fileinfo.Extension.ToLower() == ".jpg"))
 			{
-				HasExifTags = true;
-				using (ExifReader reader = new ExifReader(fileinfo.FullName))
+				try
 				{
-					foreach (var value in Enum.GetValues(typeof(ExifLib.ExifTags)))
+
+					HasExifTags = true;
+
+					using (ExifReader reader = new ExifReader(fileinfo.FullName))
 					{
-						ExifTags currentTag = (ExifTags)value;
-						object result = null;
-
-
-						if (reader.GetTagValue<object>(currentTag, out result))
+						foreach (var value in Enum.GetValues(typeof(ExifLib.ExifTags)))
 						{
-							ExifTagValues.Add(currentTag, result.ToString());
+							ExifTags currentTag = (ExifTags)value;
+							object result = null;
 
-							if (ExifLibTagToExifDateTimeEnumProperty.ContainsKey(currentTag))
-								ExifTagDateValues.Add(ExifLibTagToExifDateTimeEnumProperty[currentTag], getExifDate(currentTag));
+
+							if (reader.GetTagValue<object>(currentTag, out result))
+							{
+								ExifTagValues.Add(currentTag, result.ToString());
+
+								if (ExifLibTagToExifDateTimeEnumProperty.ContainsKey(currentTag))
+									ExifTagDateValues.Add(ExifLibTagToExifDateTimeEnumProperty[currentTag], getExifDate(currentTag));
+							}
+							else
+								ExifTagValues.Add(currentTag, String.Empty);
 						}
-						else
-							ExifTagValues.Add(currentTag, String.Empty);
 					}
+				}
+				catch 
+				{
+					HasExifTags = false;
 				}
 			}
 			else

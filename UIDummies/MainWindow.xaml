@@ -1,0 +1,32 @@
+﻿<Window x:Class="UIDummies.MainWindow"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+				xmlns:ctrl="clr-namespace:UIDummies"
+				xmlns:uc="clr-namespace:FancyFileRenamerWpf.TaskEditControl;assembly=FancyFileRenamerWpf"
+				Title="DUMMY" Height="768" Width="1024">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition Height="auto"></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+			<Expander>
+				<Expander.Header>
+					<StackPanel Orientation="Horizontal">
+						<Image Width="32" Height="32"  />
+						<Label Content="Hallo Welt" />
+					</StackPanel>
+				</Expander.Header>
+				<Expander.Content>
+					<ctrl:ReplaceTaskUserControl></ctrl:ReplaceTaskUserControl>
+				</Expander.Content>
+			</Expander>
+		</StackPanel>
+	</Grid>
+</Window>

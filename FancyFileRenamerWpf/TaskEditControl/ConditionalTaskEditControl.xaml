@@ -8,7 +8,7 @@
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition Width="32"></ColumnDefinition>
+			
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition></RowDefinition>
@@ -17,10 +17,21 @@
 			<RowDefinition></RowDefinition>
 			<RowDefinition></RowDefinition>
 		</Grid.RowDefinitions>
-		<ListBox Grid.Column="0" Name="lstBxConditions" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+		<GroupBox Grid.Column="0" Header="Condition" Padding="5">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="32" />
+				</Grid.ColumnDefinitions>
+		<ListBox Grid.Column="0"  Name="lstBxConditions" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
 		<StackPanel Grid.Column="1" Orientation="Vertical">
 			<Button Height="32" Name="btnAddCondition" Click="btnAddCondition_Click">+</Button>
 			<Button Height="32" Name="btnRemoveCondition">-</Button>
 		</StackPanel>
+			</Grid>
+		</GroupBox>
 	</Grid>
 </UserControl>
