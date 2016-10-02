@@ -12,9 +12,14 @@
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition></RowDefinition>
-			<RowDefinition Height="auto"></RowDefinition>
-			<RowDefinition></RowDefinition>
 		</Grid.RowDefinitions>
+		<TreeView Grid.Column="1" Grid.Row="0">
+			<TreeView.Template>
+				<ControlTemplate>
+					
+				</ControlTemplate>
+			</TreeView.Template>
+		</TreeView>
 		<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
 			<Expander>
 				<Expander.Header>

@@ -150,7 +150,9 @@
     <Compile Include="TaskEditControl\TaskEditWindow.xaml.cs">
       <DependentUpon>TaskEditWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProjectViewModel.cs" />
     <Compile Include="ViewModel\RenamingTaskViewModel.cs" />
+    <Compile Include="ViewModel\TaskViewModel.cs" />
     <Page Include="FileInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
